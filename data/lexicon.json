@@ -1,0 +1,260 @@
+[
+  {
+    "id": "gs-lex-0001",
+    "dialect_form": "어데",
+    "standard_form": "어디",
+    "meaning": "장소를 묻거나 가리키는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "표준어 '어디'의 모음 'ㅣ'가 'ㅔ'로 실현되는 사례로 추정 (검증 필요)",
+    "grammatical_note": "종결어미 '-노'와 결합해 설명의문문을 구성",
+    "region": {
+      "province": "경남",
+      "city": "부산",
+      "sub_dialect": "경남 동부"
+    },
+    "generation": [
+      "노년",
+      "중년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "니 어데 가노?",
+        "standard": "너 어디 가니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-lex-0001.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-0001"
+    ],
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (실제 조사 필요)",
+      "verified": false
+    },
+    "tags": [
+      "장소",
+      "의문",
+      "부산"
+    ]
+  },
+  {
+    "id": "gs-lex-0002",
+    "dialect_form": "와",
+    "standard_form": "왜",
+    "meaning": "이유를 묻는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "표준어 '왜[wɛ]'의 이중모음이 단모음 '와[wa]'로 단순화된 사례로 추정 (검증 필요)",
+    "grammatical_note": "종결어미 '-노'와 결합해 이유를 묻는 설명의문문 구성",
+    "region": {
+      "province": "경북",
+      "city": "대구",
+      "sub_dialect": "경북 남부"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "와 그카노?",
+        "standard": "왜 그러니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-lex-0002.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-0001"
+    ],
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (실제 조사 필요)",
+      "verified": false
+    },
+    "tags": [
+      "이유",
+      "의문",
+      "대구"
+    ]
+  },
+  {
+    "id": "gs-lex-0003",
+    "dialect_form": "뭐라카노",
+    "standard_form": "뭐라고 하니 / 뭐라고 말하는 거니",
+    "meaning": "상대의 말을 되묻거나 이해하지 못했을 때 쓰는 말",
+    "part_of_speech": "동사구",
+    "category": "grammatical",
+    "phonological_note": "'뭐라고 하-'가 축약되어 '뭐라카-'로 실현",
+    "grammatical_note": "'-노'(설명의문문 어미) 결합, 인용동사 '하다'의 방언형 '카다' 사용",
+    "region": {
+      "province": "경남",
+      "city": "경남 전역",
+      "sub_dialect": "경남"
+    },
+    "generation": [
+      "청소년",
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "니 뭐라카노?",
+        "standard": "너 뭐라고 하는 거니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-lex-0003.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-0001",
+      "gr-0003"
+    ],
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (실제 조사 필요)",
+      "verified": false
+    },
+    "tags": [
+      "인용",
+      "되묻기"
+    ]
+  },
+  {
+    "id": "gs-lex-0004",
+    "dialect_form": "가가",
+    "standard_form": "그 아이가 / 그 애가",
+    "meaning": "제3자를 가리키는 대명사구",
+    "part_of_speech": "대명사+조사",
+    "category": "lexical",
+    "phonological_note": "'그 아이가'의 축약형으로 추정 (검증 필요)",
+    "grammatical_note": "주격조사 '가' 반복 결합",
+    "region": {
+      "province": "경남",
+      "city": "부산",
+      "sub_dialect": "경남 동부"
+    },
+    "generation": [
+      "청소년",
+      "청년",
+      "중년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "가가 그캤다.",
+        "standard": "그 애가 그렇게 말했다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-lex-0004.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (실제 조사 필요)",
+      "verified": false
+    },
+    "tags": [
+      "대명사",
+      "부산"
+    ]
+  },
+  {
+    "id": "gs-lex-0005",
+    "dialect_form": "하이소",
+    "standard_form": "하세요",
+    "meaning": "정중한 명령·권유",
+    "part_of_speech": "동사(명령형)",
+    "category": "grammatical",
+    "phonological_note": null,
+    "grammatical_note": "높임 명령형 어미 '-이소' 결합 (표준어 '-세요'에 대응)",
+    "region": {
+      "province": "경남",
+      "city": "경남 전역",
+      "sub_dialect": "경남"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "여기 앉으이소.",
+        "standard": "여기 앉으세요.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-lex-0005.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-0004"
+    ],
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (실제 조사 필요)",
+      "verified": false
+    },
+    "tags": [
+      "명령문",
+      "높임"
+    ]
+  },
+  {
+    "id": "gs-lex-0006",
+    "dialect_form": "뭇나",
+    "standard_form": "먹었니",
+    "meaning": "먹었는지를 묻는 판정의문문",
+    "part_of_speech": "동사(의문형)",
+    "category": "grammatical",
+    "phonological_note": "'먹었나'의 축약형",
+    "grammatical_note": "판정의문문 어미 '-나' 결합 (의문사 없음)",
+    "region": {
+      "province": "경북",
+      "city": "대구",
+      "sub_dialect": "경북 남부"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "밥 뭇나?",
+        "standard": "밥 먹었니?",
+        "sentence_type": "판정의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-lex-0006.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-0002"
+    ],
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (실제 조사 필요)",
+      "verified": false
+    },
+    "tags": [
+      "의문문",
+      "판정의문"
+    ]
+  }
+]

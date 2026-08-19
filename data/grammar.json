@@ -1,0 +1,91 @@
+[
+  {
+    "id": "gr-0001",
+    "form": "-노",
+    "function": "설명의문문 종결어미 (의문사가 있는 의문문에 사용)",
+    "standard_equivalent": "-니 / -어",
+    "region_distribution": [
+      "부산",
+      "경남",
+      "경북 일부"
+    ],
+    "counterpart": {
+      "id": "gr-0002",
+      "form": "-나",
+      "function": "판정의문문 종결어미"
+    },
+    "example": {
+      "dialect": "어데 가노?",
+      "standard": "어디 가니?"
+    },
+    "source": {
+      "type": "reference",
+      "reference": "국립국어원 관련 질의응답 (2026)",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-0002",
+    "form": "-나",
+    "function": "판정의문문 종결어미 (의문사가 없는 예/아니오 의문문에 사용)",
+    "standard_equivalent": "-니 (예/아니오 응답)",
+    "region_distribution": [
+      "부산",
+      "경남",
+      "경북"
+    ],
+    "counterpart": {
+      "id": "gr-0001",
+      "form": "-노",
+      "function": "설명의문문 종결어미"
+    },
+    "example": {
+      "dialect": "밥 뭇나?",
+      "standard": "밥 먹었니?"
+    },
+    "source": {
+      "type": "reference",
+      "reference": "국립국어원 관련 질의응답 (2026)",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-0003",
+    "form": "카다 (하다의 방언형)",
+    "function": "인용동사 '하다'의 방언 어형",
+    "standard_equivalent": "하다 / 라고 하다",
+    "region_distribution": [
+      "경남",
+      "경북 일부"
+    ],
+    "counterpart": null,
+    "example": {
+      "dialect": "뭐라카노?",
+      "standard": "뭐라고 하니?"
+    },
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (검증 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-0004",
+    "form": "-이소",
+    "function": "높임 명령형 종결어미",
+    "standard_equivalent": "-세요",
+    "region_distribution": [
+      "경남"
+    ],
+    "counterpart": null,
+    "example": {
+      "dialect": "앉으이소.",
+      "standard": "앉으세요."
+    },
+    "source": {
+      "type": "field_interview",
+      "reference": "예시 데이터 (검증 필요)",
+      "verified": false
+    }
+  }
+]

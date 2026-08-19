@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>음성 아카이브 · 경상도 방언 디지털 사전</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">경상도 방언 디지털 사전</div>
+  <nav class="site-nav"><a href="index.html">메인</a><a href="dictionary.html">디지털 사전</a><a href="compare.html">표준어-방언 비교</a><a href="grammar.html">문법</a><a href="archive.html" class="active">음성 아카이브</a><a href="generation.html">세대별 비교</a><a href="about.html">연구 소개</a></nav>
+</header>
+<main>
+
+<h1>음성 아카이브</h1>
+<p>실제 화자의 방언 음성을 지역·세대·문장유형 메타데이터와 함께 제공합니다.
+현재는 예시 구조만 있으며, 실제 음성 파일은 audio 폴더에 추가해야 합니다.</p>
+<div class="search-bar">
+  <select id="regionFilterArchive">
+    <option value="">전체 지역</option>
+    <option value="부산">부산</option>
+    <option value="대구">대구</option>
+    <option value="경남">경남</option>
+    <option value="경북">경북</option>
+  </select>
+</div>
+<div id="archiveList"></div>
+
+</main>
+<footer>본 사이트는 고등학교 탐구 프로젝트로 제작되었으며, 모든 예시 자료는 검증이 필요한 예비 데이터입니다.</footer>
+<script type="module" src="js/archive.js"></script>
+</body>
+</html>

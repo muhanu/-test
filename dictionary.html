@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털 사전 · 경상도 방언 디지털 사전</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">경상도 방언 디지털 사전</div>
+  <nav class="site-nav"><a href="index.html">메인</a><a href="dictionary.html" class="active">디지털 사전</a><a href="compare.html">표준어-방언 비교</a><a href="grammar.html">문법</a><a href="archive.html">음성 아카이브</a><a href="generation.html">세대별 비교</a><a href="about.html">연구 소개</a></nav>
+</header>
+<main>
+
+<h1>디지털 방언 사전</h1>
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="예: 어데, 뭐라카노, 하이소...">
+  <select id="regionFilter">
+    <option value="">전체 지역</option>
+    <option value="부산">부산</option>
+    <option value="대구">대구</option>
+    <option value="경남">경남</option>
+    <option value="경북">경북</option>
+  </select>
+  <select id="genFilter">
+    <option value="">전체 세대</option>
+    <option value="청소년">청소년</option>
+    <option value="청년">청년</option>
+    <option value="중년">중년</option>
+    <option value="노년">노년</option>
+  </select>
+  <button id="searchBtn">검색</button>
+</div>
+<div id="results"></div>
+
+</main>
+<footer>본 사이트는 고등학교 탐구 프로젝트로 제작되었으며, 모든 예시 자료는 검증이 필요한 예비 데이터입니다.</footer>
+<script type="module" src="js/dictionary.js"></script>
+</body>
+</html>
