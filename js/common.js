@@ -1,8 +1,8 @@
 export async function loadJSON(path) {
-  const response = await fetch(path, { cache: "default" });
-  if (!response.ok) throw new Error(`자료를 불러오지 못했습니다 (${response.status}).`);
+  const response = await fetch(path);
+  if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
   const data = await response.json();
-  if (!Array.isArray(data)) throw new Error("자료 형식이 올바르지 않습니다.");
+  if (!Array.isArray(data)) throw new Error(`Expected a JSON array: ${path}`);
   return data;
 }
 
@@ -10,7 +10,7 @@ export const loadLexicon = () => loadJSON("data/lexicon.json");
 export const loadGrammar = () => loadJSON("data/grammar.json");
 
 export function escapeHTML(value = "") {
-  return String(value).replace(/[&<>"']/g, char => ({
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   })[char]);
 }
@@ -22,8 +22,8 @@ export function verifiedBadge(item) {
 }
 
 export function tagHtml(tags = []) {
-  if (!Array.isArray(tags) || !tags.length) return "";
-  return `<div class="tags">${tags.map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div>`;
+  if (!Array.isArray(tags) || tags.length === 0) return "";
+  return tags.map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("");
 }
 
 export function regionLabel(region) {
@@ -41,6 +41,9 @@ export function hasConsentedAudio(item) {
 export function errorMessage(target, error) {
   const node = typeof target === "string" ? document.getElementById(target) : target;
   if (!node) return;
-  node.innerHTML = '<p class="error-state">자료를 불러오지 못했습니다. 잠시 후 다시 열어 주세요.</p>';
+  const message = document.createElement("p");
+  message.className = "error-state";
+  message.textContent = "자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
+  node.replaceChildren(message);
   console.error(error);
 }

@@ -1,38 +1,36 @@
 import { loadLexicon, escapeHTML, regionLabel, hasConsentedAudio, errorMessage } from "./common.js";
 
-let audioItems = [];
+let items = [];
 const list = document.getElementById("archiveList");
 const count = document.getElementById("archiveCount");
-const filter = document.getElementById("regionFilterArchive");
+const regionSelect = document.getElementById("regionFilterArchive");
 
 function render() {
-  const region = filter.value;
-  const items = audioItems.filter(item =>
+  const region = regionSelect.value;
+  const visible = items.filter(item =>
     !region || item.region?.city === region || item.region?.province === region
   );
-  count.textContent = `공개 음성 ${items.length}건`;
-  if (!items.length) {
-    list.innerHTML = '<p class="empty-state">현재 공개할 수 있는 음성 자료가 없습니다.</p>';
+  count.textContent = `공개 음성 ${visible.length}건`;
+  if (!visible.length) {
+    list.innerHTML = '<p class="empty-state">공개 동의가 확인된 음성 자료가 없습니다.</p>';
     return;
   }
-  list.innerHTML = items.map(item => {
-    const sentences = (item.example_sentences || []).map(example => escapeHTML(example.dialect)).join(" · ");
-    const generations = (item.generation || []).map(escapeHTML).join(" · ") || "정보 없음";
-    return `<article class="entry-card">
+  list.innerHTML = visible.map(item => {
+    const examples = (item.example_sentences || []).map(example => escapeHTML(example.dialect)).join(" · ");
+    return `<article class="entry">
       <h2>${escapeHTML(item.dialect_form)}</h2>
-      <div class="meta-row">지역 · ${escapeHTML(regionLabel(item.region))} <span aria-hidden="true">·</span> 세대 · ${generations}</div>
-      ${sentences ? `<p class="meaning">${sentences}</p>` : ""}
-      <audio controls preload="none" src="${escapeHTML(item.audio.file)}">이 브라우저는 오디오 재생을 지원하지 않습니다.</audio>
+      <div class="meta-row">지역 · ${escapeHTML(regionLabel(item.region))} · 세대 · ${(item.generation || []).map(escapeHTML).join(" · ") || "정보 없음"}</div>
+      ${examples ? `<p class="meaning">${examples}</p>` : ""}
+      <audio controls preload="none" src="${escapeHTML(item.audio.file)}">오디오를 지원하지 않는 브라우저입니다.</audio>
     </article>`;
   }).join("");
 }
 
 async function init() {
   try {
-    const data = await loadLexicon();
-    audioItems = data.filter(hasConsentedAudio);
+    items = (await loadLexicon()).filter(hasConsentedAudio);
     render();
-    filter.addEventListener("change", render);
+    regionSelect.addEventListener("change", render);
   } catch (error) {
     count.textContent = "자료 오류";
     errorMessage(list, error);

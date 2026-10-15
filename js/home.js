@@ -1,12 +1,15 @@
 import { loadLexicon, loadGrammar } from "./common.js";
 
 async function init() {
+  const wordCount = document.querySelector('[data-stat="words"]');
+  const grammarCount = document.querySelector('[data-stat="grammar"]');
   try {
     const [words, grammar] = await Promise.all([loadLexicon(), loadGrammar()]);
-    document.querySelector('[data-stat="words"]').textContent = words.length;
-    document.querySelector('[data-stat="grammar"]').textContent = grammar.length;
+    wordCount.textContent = words.length;
+    grammarCount.textContent = grammar.length;
   } catch (error) {
-    document.querySelectorAll(".stat-number").forEach(node => { node.textContent = "—"; });
+    wordCount.textContent = "—";
+    grammarCount.textContent = "—";
     console.error(error);
   }
 }

@@ -1,14 +1,14 @@
-import { loadLexicon, escapeHTML, regionLabel, errorMessage } from "./common.js";
+import { loadLexicon, escapeHTML, regionLabel } from "./common.js";
 
 async function init() {
-  const tbody = document.getElementById("compareBody");
+  const body = document.getElementById("compareBody");
   try {
     const data = await loadLexicon();
     if (!data.length) {
-      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">아직 등록된 예시가 없습니다.</td></tr>';
+      body.innerHTML = '<tr><td colspan="5">등록된 예시가 없습니다.</td></tr>';
       return;
     }
-    tbody.innerHTML = data.map(item => `<tr>
+    body.innerHTML = data.map(item => `<tr>
       <td>${escapeHTML(item.dialect_form)}</td>
       <td>${escapeHTML(item.standard_form)}</td>
       <td>${item.category === "grammatical" ? "문법" : "어휘"}</td>
@@ -16,7 +16,12 @@ async function init() {
       <td>${escapeHTML(regionLabel(item.region))}</td>
     </tr>`).join("");
   } catch (error) {
-    tbody.innerHTML = '<tr><td colspan="5"><p class="error-state">자료를 불러오지 못했습니다. 잠시 후 다시 열어 주세요.</p></td></tr>';
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.colSpan = 5;
+    cell.textContent = "자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
+    row.append(cell);
+    body.replaceChildren(row);
     console.error(error);
   }
 }
