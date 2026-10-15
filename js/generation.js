@@ -1,29 +1,26 @@
+import { loadLexicon, errorMessage } from "./common.js";
 
-import { loadLexicon } from './common.js';
-
-const GEN_ORDER = ['청소년', '청년', '중년', '노년'];
-
+const order = ["청소년", "청년", "중년", "노년"];
 async function init() {
-  const data = await loadLexicon();
-  const counts = {};
-  GEN_ORDER.forEach(g => counts[g] = 0);
-  data.forEach(item => {
-    (item.generation || []).forEach(g => {
-      if (counts[g] !== undefined) counts[g]++;
-    });
-  });
-  const max = Math.max(...Object.values(counts), 1);
-  const container = document.getElementById('genChart');
-  container.innerHTML = '';
-  GEN_ORDER.forEach(g => {
-    const pct = Math.round((counts[g] / max) * 100);
-    const row = document.createElement('div');
-    row.className = 'bar-row';
-    row.innerHTML = `
-      <div class="bar-label">${g}</div>
-      <div class="bar-track"><div class="bar-fill" style="width:${pct}%">${counts[g]}건</div></div>
-    `;
-    container.appendChild(row);
-  });
+  const chart = document.getElementById("genChart");
+  try {
+    const data = await loadLexicon();
+    const counts = Object.fromEntries(order.map(generation => [generation, 0]));
+    data.forEach(item => (item.generation || []).forEach(generation => {
+      if (Object.hasOwn(counts, generation)) counts[generation]++;
+    }));
+    const max = Math.max(1, ...Object.values(counts));
+    document.getElementById("generationTotal").textContent = `${data.length}개 예시`;
+    chart.innerHTML = order.map((generation, index) => {
+      const value = counts[generation];
+      const width = value ? Math.max(4, Math.round(value / max * 100)) : 0;
+      return `<div class="bar-row" role="listitem">
+        <span class="bar-label">${generation}</span>
+        <div class="bar-track" role="progressbar" aria-label="${generation} 태그 항목 수" aria-valuemin="0" aria-valuemax="${max}" aria-valuenow="${value}">
+          <div class="bar-fill" style="width:${width}%;--bar-index:${index}"></div>
+        </div><span class="bar-value">${value}건</span>
+      </div>`;
+    }).join("");
+  } catch (error) { errorMessage(chart, error); }
 }
 init();

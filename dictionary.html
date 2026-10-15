@@ -1,41 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>디지털 사전 · 경상도 방언 디지털 사전</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="경상도 방언 예시를 검색하고 지역과 세대별로 살펴보세요.">
+  <title>어휘 사전 | 말결</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="logo">경상도 방언 디지털 사전</div>
-  <nav class="site-nav"><a href="index.html">메인</a><a href="dictionary.html" class="active">디지털 사전</a><a href="compare.html">표준어-방언 비교</a><a href="grammar.html">문법</a><a href="archive.html">음성 아카이브</a><a href="generation.html">세대별 비교</a><a href="about.html">연구 소개</a></nav>
-</header>
-<main>
-
-<h1>디지털 방언 사전</h1>
-<div class="search-bar">
-  <input type="text" id="searchInput" placeholder="예: 어데, 뭐라카노, 하이소...">
-  <select id="regionFilter">
-    <option value="">전체 지역</option>
-    <option value="부산">부산</option>
-    <option value="대구">대구</option>
-    <option value="경남">경남</option>
-    <option value="경북">경북</option>
-  </select>
-  <select id="genFilter">
-    <option value="">전체 세대</option>
-    <option value="청소년">청소년</option>
-    <option value="청년">청년</option>
-    <option value="중년">중년</option>
-    <option value="노년">노년</option>
-  </select>
-  <button id="searchBtn">검색</button>
-</div>
-<div id="results"></div>
-
-</main>
-<footer>본 사이트는 고등학교 탐구 프로젝트로 제작되었으며, 모든 예시 자료는 검증이 필요한 예비 데이터입니다.</footer>
-<script type="module" src="js/dictionary.js"></script>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="말결 홈"><span class="brand-mark" aria-hidden="true">말</span><span class="brand-copy"><strong>말결</strong><small>경상도 방언 아카이브</small></span></a><nav class="primary-nav" aria-label="주 메뉴"><a href="index.html">홈</a><a href="dictionary.html" aria-current="page">어휘 사전</a><a href="compare.html">표준어 비교</a><a href="grammar.html">문법</a><a href="archive.html">음성 기록</a><a href="generation.html">세대별 보기</a><a href="about.html">프로젝트</a></nav></div></header>
+  <main id="main"><section class="page-intro"><div class="page-intro-copy"><p class="eyebrow eyebrow-dark">01 / WORDS</p><h1>어휘 사전</h1><p>방언형의 뜻과 예문을 지역·세대 정보와 함께 찾아봅니다.</p></div><div class="intro-aside"><span class="aside-glyph">가</span><span>말의 생김새와<br>쓰임을 살펴보세요</span></div></section>
+<section class="search-panel" aria-label="사전 검색"><label class="search-field"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">검색어</span><input type="search" id="searchInput" placeholder="방언형, 표준어, 뜻으로 검색" autocomplete="off" aria-controls="results"></label><label class="select-field"><span class="sr-only">지역 선택</span><select id="regionFilter"><option value="">모든 지역</option><option value="부산">부산</option><option value="대구">대구</option><option value="경남">경남</option><option value="경북">경북</option></select></label><label class="select-field"><span class="sr-only">세대 선택</span><select id="genFilter"><option value="">모든 세대</option><option value="청소년">청소년</option><option value="청년">청년</option><option value="중년">중년</option><option value="노년">노년</option></select></label><button class="reset-button" id="resetFilters" type="button">초기화</button></section>
+<div class="results-toolbar"><p id="resultCount" role="status" aria-live="polite">자료를 불러오는 중입니다…</p><span class="sample-note">예시 데이터 · 검증 전</span></div><section id="results" class="entry-grid" aria-label="사전 검색 결과"></section></main>
+  <footer class="site-footer"><div class="footer-inner"><a class="footer-brand" href="index.html">말결 <span>경상도 방언 아카이브</span></a><p>지역의 말과 그 안에 담긴 이야기를 기록합니다. <a href="about.html">자료와 연구 방법 보기 →</a></p></div></footer>
+  <script type="module" src="js/dictionary.js"></script>
 </body>
 </html>

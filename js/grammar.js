@@ -1,23 +1,27 @@
-
-import { loadGrammar } from './common.js';
+import { loadGrammar, escapeHTML, verifiedBadge, errorMessage } from "./common.js";
 
 async function init() {
-  const data = await loadGrammar();
-  const container = document.getElementById('grammarList');
-  container.innerHTML = '';
-  data.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="dialect-form">${item.form}</div>
-      <p>${item.function}</p>
-      <div class="meta-row">표준어 대응: ${item.standard_equivalent}</div>
-      <div class="meta-row">분포 지역: ${(item.region_distribution || []).join(', ')}</div>
-      ${item.counterpart ? `<div class="meta-row">대응 어미: ${item.counterpart.form} (${item.counterpart.function})</div>` : ''}
-      <div>예문: <strong>${item.example.dialect}</strong> — ${item.example.standard}</div>
-      ${item.source && !item.source.verified ? '<span class="badge-unverified">검증 필요</span>' : ''}
-    `;
-    container.appendChild(card);
-  });
+  const container = document.getElementById("grammarList");
+  try {
+    const data = await loadGrammar();
+    if (!data.length) {
+      container.innerHTML = '<p class="empty-state">아직 등록된 문법 항목이 없습니다.</p>';
+      return;
+    }
+    container.innerHTML = data.map(item => {
+      const example = item.example || {};
+      const counterpart = item.counterpart
+        ? `<div class="meta-row">함께 보기 · ${escapeHTML(item.counterpart.form)} — ${escapeHTML(item.counterpart.function)}</div>`
+        : "";
+      return `<article class="entry-card">
+        <h2>${escapeHTML(item.form)} ${verifiedBadge(item)}</h2>
+        <p class="meaning">${escapeHTML(item.function)}</p>
+        <div class="meta-row">표준어 대응 · ${escapeHTML(item.standard_equivalent)}</div>
+        <div class="meta-row">분포 · ${(item.region_distribution || []).map(escapeHTML).join(" · ") || "정보 없음"}</div>
+        ${counterpart}
+        <div class="example"><strong>${escapeHTML(example.dialect)}</strong> <span aria-hidden="true">→</span> ${escapeHTML(example.standard)}</div>
+      </article>`;
+    }).join("");
+  } catch (error) { errorMessage(container, error); }
 }
 init();

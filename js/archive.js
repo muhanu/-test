@@ -1,35 +1,41 @@
+import { loadLexicon, escapeHTML, regionLabel, hasConsentedAudio, errorMessage } from "./common.js";
 
-import { loadLexicon } from './common.js';
+let audioItems = [];
+const list = document.getElementById("archiveList");
+const count = document.getElementById("archiveCount");
+const filter = document.getElementById("regionFilterArchive");
 
-let allData = [];
-
-function render(items) {
-  const container = document.getElementById('archiveList');
-  container.innerHTML = '';
-  const withAudio = items.filter(i => i.audio && i.audio.file);
-  if (withAudio.length === 0) {
-    container.innerHTML = '<p class="empty-msg">등록된 음성 자료가 없습니다. audio 폴더에 mp3 파일을 추가하고 data/lexicon.json의 audio.file 경로를 채워주세요.</p>';
+function render() {
+  const region = filter.value;
+  const items = audioItems.filter(item =>
+    !region || item.region?.city === region || item.region?.province === region
+  );
+  count.textContent = `공개 음성 ${items.length}건`;
+  if (!items.length) {
+    list.innerHTML = '<p class="empty-state">현재 공개할 수 있는 음성 자료가 없습니다.</p>';
     return;
   }
-  withAudio.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="dialect-form">${item.dialect_form}</div>
-      <div class="meta-row">지역: ${item.region ? (item.region.city || item.region.province) : '미확인'} · 세대: ${(item.generation||[]).join(', ')}</div>
-      <div class="meta-row">문장유형: ${(item.example_sentences||[]).map(e=>e.sentence_type).join(', ')}</div>
-      <audio controls src="${item.audio.file}"></audio>
-    `;
-    container.appendChild(card);
-  });
+  list.innerHTML = items.map(item => {
+    const sentences = (item.example_sentences || []).map(example => escapeHTML(example.dialect)).join(" · ");
+    const generations = (item.generation || []).map(escapeHTML).join(" · ") || "정보 없음";
+    return `<article class="entry-card">
+      <h2>${escapeHTML(item.dialect_form)}</h2>
+      <div class="meta-row">지역 · ${escapeHTML(regionLabel(item.region))} <span aria-hidden="true">·</span> 세대 · ${generations}</div>
+      ${sentences ? `<p class="meaning">${sentences}</p>` : ""}
+      <audio controls preload="none" src="${escapeHTML(item.audio.file)}">이 브라우저는 오디오 재생을 지원하지 않습니다.</audio>
+    </article>`;
+  }).join("");
 }
 
 async function init() {
-  allData = await loadLexicon();
-  render(allData);
-  document.getElementById('regionFilterArchive').addEventListener('change', e => {
-    const v = e.target.value;
-    render(!v ? allData : allData.filter(i => i.region && (i.region.city === v || i.region.province === v)));
-  });
+  try {
+    const data = await loadLexicon();
+    audioItems = data.filter(hasConsentedAudio);
+    render();
+    filter.addEventListener("change", render);
+  } catch (error) {
+    count.textContent = "자료 오류";
+    errorMessage(list, error);
+  }
 }
 init();
