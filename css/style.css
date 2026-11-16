@@ -811,7 +811,7 @@ code {
 
 /* ---------- 통계 ---------- */
 
-.chart-block { padding: 26px 0 8px; border-top: 1px solid var(--rule-strong); }
+.chart-block { max-width: 780px; padding: 26px 0 8px; border-top: 1px solid var(--rule-strong); }
 .chart-block:first-of-type { border-top: 1px solid var(--rule-strong); }
 .chart-head {
   display: flex;
