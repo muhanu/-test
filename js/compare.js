@@ -19,6 +19,19 @@ function matrixHTML(rows) {
   </tr>`).join("");
 }
 
+function interleaveByRegion(items) {
+  const buckets = REGIONS.map(region => items.filter(item => macroOf(item) === region.key));
+  const out = [];
+  let added = true;
+  while (added) {
+    added = false;
+    for (const bucket of buckets) {
+      if (bucket.length) { out.push(bucket.shift()); added = true; }
+    }
+  }
+  return out;
+}
+
 function pairHTML(item) {
   const meta = REGIONS.find(region => region.key === macroOf(item));
   const example = (item.example_sentences || [])[0];
@@ -57,7 +70,7 @@ async function init() {
     const covered = new Set(compare.flatMap(row => Object.keys(row.forms || {})));
     byId("matrixMeta").textContent = `${compare.length}개 개념 · ${covered.size}개 권역`;
 
-    pairs = lexicon.filter(item => (item.example_sentences || []).length);
+    pairs = interleaveByRegion(lexicon.filter(item => (item.example_sentences || []).length));
     syncChips();
     renderPairs();
 

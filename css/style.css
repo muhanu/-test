@@ -52,6 +52,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   min-width: 320px;
   margin: 0;
   background: var(--paper);
@@ -177,7 +180,7 @@ small { font-size: 0.8rem; }
 
 /* ---------- 첫 화면 ---------- */
 
-main { padding: 0 0 56px; }
+main { flex: 1 0 auto; padding: 0 0 56px; }
 
 .home-intro { padding: 52px 0 36px; }
 .home-intro h1 { max-width: 26ch; }
@@ -275,7 +278,7 @@ main { padding: 0 0 56px; }
 
 .region-row {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
+  grid-template-columns: 132px minmax(0, 1fr);
   gap: 4px 20px;
   padding: 14px 0;
   border-bottom: 1px solid var(--rule);
@@ -290,13 +293,11 @@ main { padding: 0 0 56px; }
 }
 .region-name:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .region-count {
-  display: block;
-  margin-top: 2px;
   color: var(--muted);
   font-size: 0.76rem;
   font-variant-numeric: tabular-nums;
 }
-.region-head { display: block; }
+.region-head { display: flex; align-items: baseline; gap: 6px; }
 .region-words { font-size: 0.88rem; color: var(--faint); }
 .region-words a {
   color: var(--body);
@@ -446,7 +447,7 @@ table.data caption { text-align: left; }
   background: var(--paper);
   white-space: normal;
 }
-.matrix .row-sub { display: block; margin-top: 3px; color: var(--faint); font-size: 0.72rem; font-weight: 400; }
+.matrix .row-sub { margin-left: 6px; color: var(--faint); font-size: 0.72rem; font-weight: 400; }
 .matrix .form { color: var(--ink); font-weight: 600; }
 .matrix .form.is-standard { color: var(--faint); font-weight: 400; }
 
@@ -965,7 +966,7 @@ code {
   .search-form input { flex: 1 1 100%; border-radius: var(--r) var(--r) 0 0; }
   .search-form button { flex: 1 1 100%; border-left: 0; border-top: 1px solid var(--rule-strong); border-radius: 0 0 var(--r) var(--r); }
 
-  .region-row { grid-template-columns: 88px minmax(0, 1fr); gap: 4px 14px; }
+  .region-row { grid-template-columns: 108px minmax(0, 1fr); gap: 4px 14px; }
   .region-words { font-size: 0.84rem; }
 
   .toolbar { grid-template-columns: 1fr; }
