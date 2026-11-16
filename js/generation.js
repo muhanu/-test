@@ -2,14 +2,13 @@ import { loadLexicon, errorMessage, macroOf, REGIONS, GENERATIONS } from "./comm
 
 const byId = id => document.getElementById(id);
 
-function barsHTML(entries, max, { regionColors = false } = {}) {
+function barsHTML(entries, max) {
   return entries.map(([label, value]) => {
-    const percent = value ? Math.max(2.5, Math.round((value / max) * 100)) : 0;
-    const meta = regionColors ? REGIONS.find(r => r.key === label) : null;
+    const percent = value ? Math.max(2, Math.round((value / max) * 100)) : 0;
     return `<div class="bar-row">
       <span class="bar-label">${label}</span>
       <div class="bar-track" role="progressbar" aria-label="${label} 항목 수" aria-valuemin="0" aria-valuemax="${max}" aria-valuenow="${value}">
-        <div class="bar-fill" style="width:${percent}%;${meta ? `--region-color:${meta.color}` : ""}"></div>
+        <div class="bar-fill" style="width:${percent}%"></div>
       </div>
       <span class="bar-value">${value}개</span>
     </div>`;
@@ -22,7 +21,7 @@ async function init() {
 
     const regionCounts = REGIONS.map(region => [region.key, data.filter(item => macroOf(item) === region.key).length]);
     const regionMax = Math.max(1, ...regionCounts.map(([, value]) => value));
-    byId("regionChart").innerHTML = barsHTML(regionCounts, regionMax, { regionColors: true });
+    byId("regionChart").innerHTML = barsHTML(regionCounts, regionMax);
     byId("regionTotal").textContent = `총 ${data.length}개 어휘`;
 
     const generationCounts = GENERATIONS.map(generation => [generation, data.filter(item => (item.generation || []).includes(generation)).length]);
@@ -43,6 +42,7 @@ async function init() {
     byId("statExamples").textContent = examples;
     byId("statSubDialects").textContent = new Set(data.map(item => item.region?.sub_dialect).filter(Boolean)).size;
   } catch (error) {
+    byId("regionTotal").textContent = "자료 오류";
     errorMessage("regionChart", error);
   }
 }

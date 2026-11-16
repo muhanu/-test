@@ -3,10 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090b0e">
+<meta name="theme-color" content="#FAF9F6">
 <meta name="description" content="표준어 개념 하나를 경상·전라·충청·강원·제주 다섯 권역의 말과 나란히 비교합니다.">
 <title>지역별 비교 · 말결 한국어 방언 아카이브</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,8 +18,8 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">말</span>
-      <span class="brand-text"><span class="brand-name">말결</span><span class="brand-sub">한국어 방언 아카이브</span></span>
+      <span class="brand-name">말결</span>
+      <span class="brand-sub">한국어 방언 아카이브</span>
     </a>
     <nav class="primary-nav" aria-label="주 메뉴">
       <a href="index.html">처음</a>
@@ -33,50 +37,56 @@
 <main id="main">
   <div class="wrap">
     <header class="page-head">
-      <p class="eyebrow">02 / 비교</p>
       <h1>지역별 비교</h1>
-      <p>같은 개념을 권역마다 어떻게 다르게 부르는지 한눈에 봅니다. 표준어와 같은 형태로 쓰는 지역은 흐리게 표시했습니다.</p>
+      <p>같은 개념을 권역마다 어떻게 다르게 부르는지 봅니다. 표준어와 같은 형태로 쓰는 지역은 흐리게 두었습니다.</p>
     </header>
 
-    <section aria-labelledby="matrixTitle">
-      <div class="result-bar" style="margin-top:0">
-        <p id="matrixTitle" style="font-weight:680;color:var(--text)">표준어 하나, 다섯 권역의 말</p>
-        <span id="matrixMeta">불러오는 중…</span>
+    <section class="block block-home" aria-labelledby="matrixTitle">
+      <div class="block-head">
+        <h2 id="matrixTitle">표준어 하나, 다섯 권역의 말</h2>
+        <span class="block-note" id="matrixMeta">불러오는 중</span>
       </div>
-      <div class="matrix-wrap" id="matrixWrap">
-        <table class="matrix" id="matrixTable">
+      <div class="table-wrap">
+        <table class="data matrix" id="matrixTable">
           <caption class="sr-only">표준어 개념별 권역 방언 비교표</caption>
-          <thead><tr><th scope="col">표준어</th><th scope="col">경상</th><th scope="col">전라</th><th scope="col">충청</th><th scope="col">강원</th><th scope="col">제주</th></tr></thead>
-          <tbody><tr><td colspan="6">불러오는 중…</td></tr></tbody>
+          <thead>
+            <tr>
+              <th scope="col">표준어</th>
+              <th scope="col">경상</th>
+              <th scope="col">전라</th>
+              <th scope="col">충청</th>
+              <th scope="col">강원</th>
+              <th scope="col">제주</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" class="state">자료를 불러오는 중입니다.</td></tr>
+          </tbody>
         </table>
       </div>
-      <p style="margin-top:10px;color:var(--faint);font-size:.75rem">모바일에서는 표를 좌우로 밀어 볼 수 있습니다. 항목은 대표 어형 하나씩이며, 한 지역 안에서도 세대·상황에 따라 다른 형태가 쓰입니다.</p>
+      <p class="site-note">표에는 대표 어형 하나씩만 실었습니다. 한 지역 안에서도 세대와 상황에 따라 다른 형태를 씁니다. 좁은 화면에서는 표를 좌우로 밀어 볼 수 있습니다.</p>
     </section>
 
-    <section class="section" aria-labelledby="pairTitle">
-      <div class="section-head">
-        <div>
-          <p class="section-label">예문</p>
-          <h2 id="pairTitle">표준어 ↔ 방언 예문</h2>
-          <p>사전에 등록된 예문을 지역별로 골라 나란히 놓았습니다.</p>
-        </div>
-        <span id="pairCount" style="color:var(--faint);font-size:.76rem">—</span>
+    <section class="block block-home" aria-labelledby="pairTitle">
+      <div class="block-head">
+        <h2 id="pairTitle">표준어와 방언 예문</h2>
+        <span class="block-note" id="pairCount">…</span>
       </div>
 
-      <div class="chip-row" role="group" aria-label="권역 선택">
+      <div class="chip-row" role="group" aria-label="권역 고르기">
         <button class="chip" type="button" data-pair-region="" aria-pressed="true">전체</button>
-        <button class="chip" type="button" data-pair-region="경상" aria-pressed="false"><span class="dot" style="color:#6aa8ff"></span>경상</button>
-        <button class="chip" type="button" data-pair-region="전라" aria-pressed="false"><span class="dot" style="color:#ff8f6b"></span>전라</button>
-        <button class="chip" type="button" data-pair-region="충청" aria-pressed="false"><span class="dot" style="color:#8ed896"></span>충청</button>
-        <button class="chip" type="button" data-pair-region="강원" aria-pressed="false"><span class="dot" style="color:#b49bff"></span>강원</button>
-        <button class="chip" type="button" data-pair-region="제주" aria-pressed="false"><span class="dot" style="color:#f2c264"></span>제주</button>
+        <button class="chip" type="button" data-pair-region="경상" aria-pressed="false">경상</button>
+        <button class="chip" type="button" data-pair-region="전라" aria-pressed="false">전라</button>
+        <button class="chip" type="button" data-pair-region="충청" aria-pressed="false">충청</button>
+        <button class="chip" type="button" data-pair-region="강원" aria-pressed="false">강원</button>
+        <button class="chip" type="button" data-pair-region="제주" aria-pressed="false">제주</button>
       </div>
 
       <div class="pair-list" id="pairList" aria-live="polite">
-        <p class="loading-state">불러오는 중…</p>
+        <p class="state">자료를 불러오는 중입니다.</p>
       </div>
 
-      <div style="display:flex;justify-content:center;margin-top:18px">
+      <div class="more-row">
         <button class="ghost-btn" id="pairMore" type="button" hidden>예문 더 보기</button>
       </div>
     </section>
@@ -85,7 +95,10 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><strong>말결 · 한국어 방언 아카이브</strong><small>@muhanu · 학습과 탐구를 위한 방언 자료</small></div>
+    <div class="footer-brand">
+      <strong>말결 · 한국어 방언 아카이브</strong>
+      <small>@muhanu · 학습과 탐구를 위한 방언 자료</small>
+    </div>
     <nav class="footer-links" aria-label="바닥글 메뉴">
       <a href="dictionary.html">어휘 사전</a>
       <a href="compare.html">지역별 비교</a>

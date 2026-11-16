@@ -3,10 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090b0e">
+<meta name="theme-color" content="#FAF9F6">
 <meta name="description" content="권역별 어휘 분포와 세대 태그, 갈래별 집계를 막대로 확인합니다.">
 <title>통계 · 말결 한국어 방언 아카이브</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,8 +18,8 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">말</span>
-      <span class="brand-text"><span class="brand-name">말결</span><span class="brand-sub">한국어 방언 아카이브</span></span>
+      <span class="brand-name">말결</span>
+      <span class="brand-sub">한국어 방언 아카이브</span>
     </a>
     <nav class="primary-nav" aria-label="주 메뉴">
       <a href="index.html">처음</a>
@@ -33,60 +37,47 @@
 <main id="main">
   <div class="wrap">
     <header class="page-head">
-      <p class="eyebrow">06 / 통계</p>
       <h1>분포와 통계</h1>
-      <p>지금 등록된 자료가 어느 권역과 세대에 얼마나 걸쳐 있는지 봅니다. 조사 결과나 실제 사용 빈도가 아니라 데이터에 붙은 태그의 집계입니다.</p>
+      <p>등록된 자료가 어느 권역과 세대에 걸쳐 있는지 봅니다. 조사 결과나 실제 사용 빈도가 아니라 데이터에 붙은 태그의 집계입니다.</p>
     </header>
 
-    <section class="stats" aria-label="자료 요약" style="margin-bottom:26px">
-      <div>
-        <span class="stat-value" id="statWords">—</span>
-        <span class="stat-label">어휘 항목</span>
-      </div>
-      <div>
-        <span class="stat-value" id="statExamples">—</span>
-        <span class="stat-label">대조 예문</span>
-      </div>
-      <div>
-        <span class="stat-value" id="statSubDialects">—</span>
-        <span class="stat-label">세부 방언권</span>
-      </div>
-      <div>
-        <span class="stat-value">5</span>
-        <span class="stat-label">대상 권역</span>
-      </div>
-    </section>
+    <div class="summary-line" aria-label="자료 요약">
+      <span>어휘 <strong id="statWords">…</strong>개</span>
+      <span>대조 예문 <strong id="statExamples">…</strong>개</span>
+      <span>세부 방언권 <strong id="statSubDialects">…</strong>곳</span>
+      <span>대상 권역 <strong>5</strong>곳</span>
+    </div>
 
-    <section class="chart-panel" aria-labelledby="regionChartTitle">
+    <section class="chart-block" aria-labelledby="regionChartTitle">
       <div class="chart-head">
         <h2 id="regionChartTitle">권역별 어휘 분포</h2>
-        <span id="regionTotal">—</span>
+        <span id="regionTotal">…</span>
       </div>
-      <p class="chart-note">항목마다 대표 권역 하나를 붙였습니다. 권역 사이에 겹쳐 쓰이는 어형은 대표 권역 쪽에만 집계됩니다.</p>
+      <p class="chart-note">항목마다 대표 권역 하나를 붙였습니다. 권역 사이에 겹쳐 쓰는 어형은 대표 권역 쪽에만 집계됩니다.</p>
       <div id="regionChart" role="list" aria-label="권역별 어휘 수">
-        <p class="loading-state">불러오는 중…</p>
+        <p class="state">자료를 불러오는 중입니다.</p>
       </div>
     </section>
 
-    <section class="chart-panel" aria-labelledby="genChartTitle">
+    <section class="chart-block" aria-labelledby="genChartTitle">
       <div class="chart-head">
         <h2 id="genChartTitle">세대 태그 분포</h2>
-        <span id="genTotal">—</span>
+        <span id="genTotal">…</span>
       </div>
       <p class="chart-note">한 항목에 여러 세대가 붙을 수 있어 합계가 전체 항목 수보다 큽니다. 실제 세대별 사용률이 아닙니다.</p>
       <div id="genChart" role="list" aria-label="세대별 어휘 수">
-        <p class="loading-state">불러오는 중…</p>
+        <p class="state">자료를 불러오는 중입니다.</p>
       </div>
     </section>
 
-    <section class="chart-panel" aria-labelledby="categoryChartTitle">
+    <section class="chart-block" aria-labelledby="categoryChartTitle">
       <div class="chart-head">
         <h2 id="categoryChartTitle">갈래별 분포</h2>
-        <span id="categoryTotal">—</span>
+        <span id="categoryTotal">…</span>
       </div>
       <p class="chart-note">어휘 항목과 문법 항목을 나눈 수입니다. 문법 항목은 별도 목록에 정리되어 있습니다.</p>
       <div id="categoryChart" role="list" aria-label="갈래별 항목 수">
-        <p class="loading-state">불러오는 중…</p>
+        <p class="state">자료를 불러오는 중입니다.</p>
       </div>
     </section>
   </div>
@@ -94,7 +85,10 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><strong>말결 · 한국어 방언 아카이브</strong><small>@muhanu · 학습과 탐구를 위한 방언 자료</small></div>
+    <div class="footer-brand">
+      <strong>말결 · 한국어 방언 아카이브</strong>
+      <small>@muhanu · 학습과 탐구를 위한 방언 자료</small>
+    </div>
     <nav class="footer-links" aria-label="바닥글 메뉴">
       <a href="dictionary.html">어휘 사전</a>
       <a href="compare.html">지역별 비교</a>

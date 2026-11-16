@@ -8,7 +8,13 @@ let activeRegion = new URLSearchParams(location.search).get("region") || "";
 
 function cardHTML(item) {
   const meta = regionMeta(item.macro_region);
-  return `<article class="entry" style="--region-color:${meta ? meta.color : "#7ad8c4"};--region-soft:${meta ? meta.soft : "#16232b"}">
+  const example = item.example ? `<div class="entry-examples">
+      <div class="ex-group">
+        <p class="ex">${escapeHTML(item.example.dialect)}</p>
+        <p class="ex-standard">${escapeHTML(item.example.standard)}</p>
+      </div>
+    </div>` : "";
+  return `<article class="entry">
     <div class="entry-top">
       <h2 class="entry-word">
         <span class="grammar-form">${escapeHTML(item.form)}</span>
@@ -23,13 +29,7 @@ function cardHTML(item) {
       <div class="note-row"><dt>분포</dt><dd>${escapeHTML((item.region_distribution || []).join(" · ") || "정보 없음")}</dd></div>
       ${item.note ? `<div class="note-row"><dt>해설</dt><dd>${escapeHTML(item.note)}</dd></div>` : ""}
     </dl>
-    ${item.example ? `<div class="entry-examples">
-      <div class="example-line">
-        <span class="ex-dialect">${escapeHTML(item.example.dialect)}</span>
-        <span class="arrow" aria-hidden="true">→</span>
-        <span class="ex-standard">${escapeHTML(item.example.standard)}</span>
-      </div>
-    </div>` : ""}
+    ${example}
   </article>`;
 }
 
@@ -44,7 +44,7 @@ function render() {
   byId("grammarCount").innerHTML = `<strong>${list.length}</strong>개 항목`;
   byId("grammarList").innerHTML = list.length
     ? list.map(cardHTML).join("")
-    : '<p class="empty-state">이 권역의 문법 항목이 아직 없습니다.</p>';
+    : '<p class="state">이 권역의 문법 항목이 아직 없습니다.</p>';
 }
 
 async function init() {

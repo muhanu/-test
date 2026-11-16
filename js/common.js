@@ -1,11 +1,31 @@
-/* 공통 유틸리티 · 데이터 로더 */
+/* 공통 유틸리티 · 데이터 로더 · 권역 표기 */
 
 export const REGIONS = [
-  { key: "경상", short: "경상", name: "경상 권역", sub: "경남 · 경북 · 부산 · 대구", color: "#6aa8ff", soft: "#131f2e", sample: "어데" },
-  { key: "전라", short: "전라", name: "전라 권역", sub: "전남 · 전북 · 광주", color: "#ff8f6b", soft: "#2a1a15", sample: "거시기" },
-  { key: "충청", short: "충청", name: "충청 권역", sub: "충남 · 충북 · 대전", color: "#8ed896", soft: "#152318", sample: "그려" },
-  { key: "강원", short: "강원", name: "강원 권역", sub: "영서 · 영동", color: "#b49bff", soft: "#1f1a2b", sample: "강냉이" },
-  { key: "제주", short: "제주", name: "제주 권역", sub: "제주어", color: "#f2c264", soft: "#262013", sample: "하영" }
+  {
+    key: "경상", name: "경상", sub: "경남 · 경북 · 부산 · 대구",
+    ink: "#2C4F4A", tint: "#EDF2F0", line: "#D3E0DC",
+    words: ["어데", "억수로", "마이", "뭐라카노"]
+  },
+  {
+    key: "전라", name: "전라", sub: "전남 · 전북 · 광주",
+    ink: "#6E4032", tint: "#F7EFEB", line: "#E3D2C9",
+    words: ["거시기", "시방", "쪼매", "을매나"]
+  },
+  {
+    key: "충청", name: "충청", sub: "충남 · 충북 · 대전",
+    ink: "#5A4F3C", tint: "#F3F0E7", line: "#DCD5C4",
+    words: ["그려", "응게", "거그", "여그"]
+  },
+  {
+    key: "강원", name: "강원", sub: "영서 · 영동",
+    ink: "#3F4A5F", tint: "#EEF1F6", line: "#D5DCE7",
+    words: ["강냉이", "올갱이", "달구지", "아재"]
+  },
+  {
+    key: "제주", name: "제주", sub: "제주어",
+    ink: "#7A5223", tint: "#F7F1E5", line: "#E4D7BF",
+    words: ["하영", "혼저", "무사", "감저"]
+  }
 ];
 
 export const REGION_KEYS = REGIONS.map(region => region.key);
@@ -18,7 +38,14 @@ export function regionMeta(key) {
 
 export function regionStyle(macro) {
   const meta = regionMeta(macro);
-  return meta ? `--region-color:${meta.color};--region-soft:${meta.soft}` : "";
+  if (!meta) return "";
+  return `--region-ink:${meta.ink};--region-tint:${meta.tint};--region-line:${meta.line}`;
+}
+
+export function regionTag(macro) {
+  const meta = regionMeta(macro);
+  const label = meta ? meta.name : "지역 미확인";
+  return `<span class="tag tag-region" style="${regionStyle(macro)}">${escapeHTML(label)}</span>`;
 }
 
 export function loadJSON(path) {
@@ -46,8 +73,8 @@ export function normalize(value) {
 }
 
 export function verifiedBadge(item) {
-  if (item?.source?.verified === true) return '<span class="badge-ok">출처 확인</span>';
-  return '<span class="badge-unverified">검증 필요</span>';
+  if (item?.source?.verified === true) return '<span class="badge badge-ok">출처 확인</span>';
+  return '<span class="badge">검증 필요</span>';
 }
 
 export function tagHtml(tags = []) {
@@ -69,7 +96,7 @@ export function hasConsentedAudio(item) {
   const file = item?.audio?.file;
   return item?.audio?.consent_obtained === true
     && typeof file === "string"
-    && /^audio\/[\w./-]+\.mp3$/i.test(file)
+    && /^audio\/[\w./%-]+\.mp3$/i.test(file)
     && !file.includes("..");
 }
 
@@ -77,7 +104,7 @@ export function errorMessage(target, error) {
   const node = typeof target === "string" ? document.getElementById(target) : target;
   if (!node) return;
   const message = document.createElement("p");
-  message.className = "error-state";
+  message.className = "state is-error";
   message.textContent = "자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
   node.replaceChildren(message);
   console.error(error);
@@ -86,8 +113,9 @@ export function errorMessage(target, error) {
 export function setRegionVars(node, macro) {
   const meta = regionMeta(macro);
   if (!node || !meta) return;
-  node.style.setProperty("--region-color", meta.color);
-  node.style.setProperty("--region-soft", meta.soft);
+  node.style.setProperty("--region-ink", meta.ink);
+  node.style.setProperty("--region-tint", meta.tint);
+  node.style.setProperty("--region-line", meta.line);
 }
 
 export function pickRandom(list, count) {

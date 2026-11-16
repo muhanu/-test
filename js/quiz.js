@@ -13,7 +13,6 @@ let questions = [];
 let index = 0;
 let score = 0;
 let answered = false;
-
 const state = { locked: false };
 
 /* 받침에 따라 주격 보조사 은/는을 고른다. */
@@ -75,26 +74,25 @@ function renderTop() {
 
 function renderQuestion() {
   if (!questions.length) {
-    area.innerHTML = '<p class="empty-state">문제를 만들 자료가 없습니다.</p>';
+    area.innerHTML = '<p class="state">문제를 만들 자료가 없습니다.</p>';
     return;
   }
   answered = false;
   state.locked = false;
   renderTop();
   const question = questions[index];
-  const meta = regionMeta(macroOf(question.item));
 
   area.innerHTML = `<section class="quiz-card" aria-live="polite">
     <span class="quiz-kicker">${question.type === "meaning" ? "뜻 맞히기" : "지역 맞히기"}</span>
     <h2 class="quiz-question">${escapeHTML(question.prompt)}</h2>
-    <p class="quiz-hint" style="color:${meta ? meta.color : "var(--muted)"}">${escapeHTML(question.hint)}</p>
+    <p class="quiz-hint">${escapeHTML(question.hint)}</p>
     <div class="quiz-options" role="group" aria-label="보기">
       ${question.options.map((option, i) => `<button class="quiz-option" type="button" data-option="${escapeHTML(option)}">
         <span class="idx">${i + 1}</span><span>${escapeHTML(option)}</span>
       </button>`).join("")}
     </div>
     <div id="quizFeedback"></div>
-    <div class="quiz-actions"><button class="btn-primary" id="quizNext" type="button" hidden>${index + 1 === questions.length ? "결과 보기" : "다음 문제"} →</button></div>
+    <div class="quiz-actions"><button class="btn-primary" id="quizNext" type="button" hidden>${index + 1 === questions.length ? "결과 보기" : "다음 문제"}</button></div>
   </section>`;
 
   area.querySelectorAll(".quiz-option").forEach(button => {
@@ -122,10 +120,13 @@ function answer(button) {
 
   const example = (question.item.example_sentences || [])[0];
   const meta = regionMeta(macroOf(question.item));
+  const exampleLine = example
+    ? `${meta ? `${meta.name} · ` : ""}표준어 ‘${question.item.standard_form}’ · ${example.dialect} / ${example.standard}`
+    : `${meta ? `${meta.name} · ` : ""}표준어 ‘${question.item.standard_form}’`;
   byId("quizFeedback").innerHTML = `<div class="quiz-feedback">
-    <strong style="color:${correct ? "var(--accent)" : "var(--danger)"}">${correct ? "정답입니다" : "아쉽게 틀렸습니다"}</strong>
-    <p>${escapeHTML(question.item.dialect_form)} — ${escapeHTML(question.item.meaning)}</p>
-    <p class="fb-example">${meta ? `${escapeHTML(meta.name)} · ` : ""}표준어 ‘${escapeHTML(question.item.standard_form)}’${example ? ` · ${escapeHTML(example.dialect)} → ${escapeHTML(example.standard)}` : ""}</p>
+    <strong class="${correct ? "is-correct" : "is-wrong"}">${correct ? "정답입니다" : "틀렸습니다"}</strong>
+    <p>${correct ? "" : `정답은 ‘${escapeHTML(question.answer)}’입니다. `}${escapeHTML(question.item.dialect_form)}, ${escapeHTML(question.item.meaning)}</p>
+    <p class="fb-example">${escapeHTML(exampleLine)}</p>
   </div>`;
   byId("quizNext").hidden = false;
   byId("quizNext").focus({ preventScroll: true });
@@ -144,23 +145,20 @@ function next() {
 
 function renderResult() {
   const total = questions.length;
-  const perfect = score === total;
-  const message = perfect
-    ? "다섯 문제를 모두 맞혔습니다. 권역별 어형이 확실히 잡혀 있네요."
-    : score >= Math.ceil(total * 0.6)
-      ? "좋습니다. 틀린 문제의 예문을 사전에서 다시 확인해 보세요."
-      : "사전의 권역별 항목을 훑어보면 다음 라운드가 쉬워집니다.";
+  const message = score === total
+    ? "다섯 문제를 모두 맞혔습니다."
+    : `${total}문제 중 ${score}문제를 맞혔습니다. 틀린 항목은 사전에서 예문과 함께 다시 확인해 보세요.`;
 
   byId("quizProgressText").textContent = "라운드 종료";
   byId("quizFill").style.width = "100%";
   byId("quizScore").textContent = `${score}점`;
   area.innerHTML = `<section class="quiz-card quiz-result">
     <p class="score">${score}<small> / ${total}</small></p>
-    <h2>${perfect ? "만점입니다" : "라운드 결과"}</h2>
+    <h2>라운드 결과</h2>
     <p>${escapeHTML(message)}</p>
     <div class="btn-row">
       <button class="btn-primary" id="quizRetry" type="button">같은 권역으로 다시 풀기</button>
-      <a class="ghost-btn" href="dictionary.html${region ? `?region=${encodeURIComponent(region)}` : ""}" style="display:inline-flex;align-items:center;text-decoration:none">사전에서 복습하기</a>
+      <a class="btn-primary btn-secondary" href="dictionary.html${region ? `?region=${encodeURIComponent(region)}` : ""}">사전에서 복습하기</a>
     </div>
   </section>`;
   byId("quizRetry").addEventListener("click", newRound);
@@ -169,8 +167,7 @@ function renderResult() {
 
 function syncChips() {
   document.querySelectorAll("[data-quiz-region]").forEach(chip => {
-    const key = chip.getAttribute("data-quiz-region");
-    chip.setAttribute("aria-pressed", String(key === region));
+    chip.setAttribute("aria-pressed", String(chip.getAttribute("data-quiz-region") === region));
   });
 }
 
@@ -178,7 +175,7 @@ async function init() {
   try {
     data = await loadLexicon();
     const paramRegion = new URLSearchParams(location.search).get("region");
-    if (paramRegion && REGIONS.some(r => r.key === paramRegion)) region = paramRegion;
+    if (paramRegion && REGIONS.some(item => item.key === paramRegion)) region = paramRegion;
     syncChips();
     newRound();
 

@@ -12,7 +12,7 @@
 
 | 경로 | 내용 |
 | --- | --- |
-| `index.html` | 히어로, 오늘의 방언(무작위), 빠른 검색, 5대 권역 바로가기, 전체 통계 |
+| `index.html` | 사전 검색, 권역별 어휘 색인, 오늘의 표제어, 지역별 비교표 미리보기 |
 | `dictionary.html` | 실시간 검색, 권역·품사·갈래·세대 필터, URL 쿼리(`?region=경상`, `?q=검색어`) |
 | `compare.html` | 표준어 하나에 다섯 권역을 놓은 비교표, 표준어 ↔ 방언 예문 비교 |
 | `grammar.html` | 권역별 문법 항목 카드 |
@@ -20,7 +20,7 @@
 | `archive.html` | 화자 동의 원칙과 동의된 음성 필터(현재 공개 음성 없음) |
 | `generation.html` | 권역별 어휘 분포, 세대 태그 분포, 갈래별 분포 막대 그래프 |
 | `about.html` | 취지, 범위, 검증·출처, 음성 동의, 한계 |
-| `css/style.css` | 다크 에디토리얼 디자인 시스템, 권역별 컬러 토큰, 반응형(360px~) |
+| `css/style.css` | 종이·먹 톤 사전 디자인 시스템(Pretendard + Noto Serif KR, 4~6px 모서리, 1px 괘선), 반응형(360px~) |
 | `js/` | 페이지별 기능과 공통 데이터 로더 |
 | `data/` | `lexicon.json`, `grammar.json`, `compare.json` |
 | `audio/` | 화자 동의를 확인한 음성 파일 자리 |

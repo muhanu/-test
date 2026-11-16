@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090b0e">
-<meta name="description" content="경상·전라·충청·강원·제주, 전국 한국어 방언을 어휘·문법·예문으로 견주어 보는 아카이브.">
+<meta name="theme-color" content="#FAF9F6">
+<meta name="description" content="경상·전라·충청·강원·제주 다섯 권역의 방언을 어휘·문법·예문으로 정리한 사전 아카이브.">
 <meta property="og:title" content="말결 · 한국어 방언 아카이브">
-<meta property="og:description" content="같은 뜻, 다른 말. 전국 5대 권역의 방언을 어휘와 문법으로 모았습니다.">
+<meta property="og:description" content="다섯 권역의 방언을 어휘·문법·예문으로 견주어 보는 사전 아카이브.">
 <meta property="og:type" content="website">
 <title>말결 · 한국어 방언 아카이브</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,11 +21,11 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">말</span>
-      <span class="brand-text"><span class="brand-name">말결</span><span class="brand-sub">한국어 방언 아카이브</span></span>
+      <span class="brand-name">말결</span>
+      <span class="brand-sub">한국어 방언 아카이브</span>
     </a>
     <nav class="primary-nav" aria-label="주 메뉴">
-      <a href="index.html">처음</a>
+      <a href="index.html" aria-current="page">처음</a>
       <a href="dictionary.html">어휘 사전</a>
       <a href="compare.html">지역별 비교</a>
       <a href="grammar.html">문법</a>
@@ -35,160 +39,88 @@
 
 <main id="main">
   <div class="wrap">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">전국 한국어 방언 아카이브</p>
-        <h1>같은 뜻,<br><em>다른 말</em>을 모읍니다.</h1>
-        <p class="hero-lead">경상·전라·충청·강원·제주. 한 개념을 지역마다 다르게 부르는 말들을 어휘와 문법, 예문으로 견주어 봅니다.</p>
-        <form class="search-form" action="dictionary.html" method="get" role="search">
-          <label class="sr-only" for="quickSearch">방언이나 표준어 검색</label>
-          <input id="quickSearch" name="q" type="search" placeholder="표준어나 방언을 검색하세요 (예: 부추)" autocomplete="off">
-          <button type="submit">사전에서 찾기</button>
-        </form>
-        <div class="quick-terms">
-          <span>바로 찾기</span>
-          <a href="dictionary.html?q=부추">부추</a>
-          <a href="dictionary.html?q=왜">왜</a>
-          <a href="dictionary.html?q=많이">많이</a>
-          <a href="dictionary.html?q=감자">감자</a>
-          <a href="dictionary.html?q=할머니">할머니</a>
-        </div>
-      </div>
-
-      <div class="word-card" id="wordCard" style="--region-color:#7ad8c4;--region-soft:#16232b">
-        <div class="word-card-head">
-          <span class="word-card-label">오늘의 방언</span>
-          <span class="region-pill">불러오는 중</span>
-        </div>
-        <div class="word-card-body">
-          <span class="word-dialect">—</span>
-          <span class="word-standard">표준어 · —</span>
-          <p class="word-meaning">자료를 불러오고 있습니다.</p>
-          <p class="word-example" hidden><strong></strong><span></span></p>
-        </div>
-        <div class="word-card-foot">
-          <small>—</small>
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
-            <a class="word-more" href="dictionary.html">사전에서 보기</a>
-            <button class="shuffle-btn" id="shuffleWord" type="button"><span aria-hidden="true">↻</span> 다른 방언</button>
-          </div>
-        </div>
-      </div>
+    <section class="home-intro" aria-labelledby="introTitle">
+      <h1 id="introTitle">우리말의 지역별 결을 모으는 방언 사전</h1>
+      <p class="home-lead">경상·전라·충청·강원·제주 다섯 권역에서 같은 뜻을 다르게 부르는 말을 어휘와 문법, 예문으로 모았습니다.</p>
+      <form class="search-form" action="dictionary.html" method="get" role="search">
+        <label class="sr-only" for="quickSearch">방언이나 표준어 검색</label>
+        <input id="quickSearch" name="q" type="search" placeholder="방언이나 표준어를 입력하세요" autocomplete="off">
+        <button type="submit">사전에서 찾기</button>
+      </form>
+      <p class="popular">
+        <span>인기 검색어</span>
+        <a href="dictionary.html?q=부추">부추</a>
+        <a href="dictionary.html?q=왜">왜</a>
+        <a href="dictionary.html?q=많이">많이</a>
+        <a href="dictionary.html?q=감자">감자</a>
+        <a href="dictionary.html?q=할머니">할머니</a>
+      </p>
     </section>
 
-    <section class="stats" aria-label="등록 자료 현황">
-      <div>
-        <span class="stat-value" data-stat="words">—</span>
-        <span class="stat-label">등록 어휘</span>
-      </div>
-      <div>
-        <span class="stat-value" data-stat="grammar">—</span>
-        <span class="stat-label">문법 항목</span>
-      </div>
-      <div>
-        <span class="stat-value" data-stat="regions">—</span>
-        <span class="stat-label">대상 권역</span>
-      </div>
-      <div>
-        <span class="stat-value" data-stat="examples">—</span>
-        <span class="stat-label">대조 예문</span>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="regionsTitle">
-      <div class="section-head">
-        <div>
-          <p class="section-label">권역</p>
-          <h2 id="regionsTitle">다섯 권역으로 들어가기</h2>
-          <p>권역 카드를 누르면 해당 지역 어휘만 모아 봅니다. 등록 수는 지금 사전에 올라온 항목 기준입니다.</p>
+    <div class="home-grid">
+      <section class="block" aria-labelledby="regionIndexTitle">
+        <div class="block-head">
+          <h2 id="regionIndexTitle">권역별 어휘</h2>
+          <span class="block-note" id="corpusNote">자료를 불러오는 중</span>
         </div>
-        <a class="section-link" href="compare.html">권역별 비교표 →</a>
-      </div>
-      <div class="region-grid">
-        <a class="region-card" href="dictionary.html?region=경상" style="--region-color:#6aa8ff;--region-soft:#131f2e">
-          <span class="region-flag" aria-hidden="true"></span>
-          <strong>경상</strong>
-          <small>경남 · 경북 · 부산 · 대구</small>
-          <span class="region-count" data-region-count="경상">—</span>
-          <span class="region-sample">예: 어데, 억수로</span>
-        </a>
-        <a class="region-card" href="dictionary.html?region=전라" style="--region-color:#ff8f6b;--region-soft:#2a1a15">
-          <span class="region-flag" aria-hidden="true"></span>
-          <strong>전라</strong>
-          <small>전남 · 전북 · 광주</small>
-          <span class="region-count" data-region-count="전라">—</span>
-          <span class="region-sample">예: 거시기, 쪼매</span>
-        </a>
-        <a class="region-card" href="dictionary.html?region=충청" style="--region-color:#8ed896;--region-soft:#152318">
-          <span class="region-flag" aria-hidden="true"></span>
-          <strong>충청</strong>
-          <small>충남 · 충북 · 대전</small>
-          <span class="region-count" data-region-count="충청">—</span>
-          <span class="region-sample">예: 그려, 응게</span>
-        </a>
-        <a class="region-card" href="dictionary.html?region=강원" style="--region-color:#b49bff;--region-soft:#1f1a2b">
-          <span class="region-flag" aria-hidden="true"></span>
-          <strong>강원</strong>
-          <small>영서 · 영동</small>
-          <span class="region-count" data-region-count="강원">—</span>
-          <span class="region-sample">예: 강냉이, 골</span>
-        </a>
-        <a class="region-card" href="dictionary.html?region=제주" style="--region-color:#f2c264;--region-soft:#262013">
-          <span class="region-flag" aria-hidden="true"></span>
-          <strong>제주</strong>
-          <small>제주어</small>
-          <span class="region-count" data-region-count="제주">—</span>
-          <span class="region-sample">예: 하영, 혼저</span>
-        </a>
-      </div>
-    </section>
+        <ul class="region-list" id="regionList">
+          <li class="state">자료를 불러오는 중입니다.</li>
+        </ul>
+      </section>
 
-    <section class="section" aria-labelledby="featuresTitle">
-      <div class="section-head">
-        <div>
-          <p class="section-label">살펴보기</p>
-          <h2 id="featuresTitle">네 갈래로 방언을 읽습니다</h2>
+      <aside class="headword" id="headwordBox" aria-labelledby="headwordTitle">
+        <div class="headword-head">
+          <h2 id="headwordTitle">오늘의 표제어</h2>
+          <span class="headword-date" id="headwordDate"></span>
         </div>
-      </div>
-      <div class="feature-grid">
-        <a class="feature-card" href="dictionary.html">
-          <span class="feature-num">01 / 어휘</span>
-          <strong>어휘 사전</strong>
-          <p>방언형·표준어·뜻·예문을 한 번에 검색하고 권역·품사·세대로 걸러 봅니다.</p>
-          <span class="arrow">사전 열기 →</span>
-        </a>
-        <a class="feature-card" href="compare.html">
-          <span class="feature-num">02 / 비교</span>
-          <strong>지역별 비교</strong>
-          <p>표준어 개념 하나에 다섯 권역의 말을 나란히 놓고, 예문도 좌우로 견줍니다.</p>
-          <span class="arrow">비교표 보기 →</span>
-        </a>
-        <a class="feature-card" href="quiz.html">
-          <span class="feature-num">03 / 퀴즈</span>
-          <strong>방언 퀴즈</strong>
-          <p>뜻 맞히기와 지역 맞히기를 다섯 문제씩. 틀리면 예문과 해설을 바로 보여 줍니다.</p>
-          <span class="arrow">퀴즈 시작 →</span>
-        </a>
-        <a class="feature-card" href="generation.html">
-          <span class="feature-num">04 / 통계</span>
-          <strong>분포와 통계</strong>
-          <p>권역별 어휘 수와 세대 태그 분포를 막대로 확인합니다.</p>
-          <span class="arrow">통계 보기 →</span>
-        </a>
-      </div>
-    </section>
+        <p class="hw-word" id="hwWord">…</p>
+        <p class="hw-tags" id="hwTags"></p>
+        <p class="hw-meaning" id="hwMeaning">자료를 불러오는 중입니다.</p>
+        <div class="hw-example" id="hwExample" hidden>
+          <p class="ex"></p>
+          <p class="ex-standard"></p>
+        </div>
+        <div class="hw-foot">
+          <button class="text-btn" id="shuffleWord" type="button">다른 낱말 보기</button>
+          <a class="text-link" id="hwLink" href="dictionary.html">사전에서 보기</a>
+        </div>
+      </aside>
+    </div>
 
-    <section class="notice" aria-label="자료 안내">
-      <p class="section-label">자료 안내</p>
-      <p>이 아카이브는 학습과 탐구를 위한 정리입니다. 항목마다 출처 확인 상태를 표시하며, 문헌·구술 대조가 끝나지 않은 항목은 ‘검증 필요’로 남깁니다. 지역과 세대 전체의 사용 양상으로 일반화하지 않습니다. 음성은 화자의 명시적 동의를 받은 자료만 공개합니다.</p>
-      <a href="about.html">자료 원칙 자세히 →</a>
+    <section class="block block-home" aria-labelledby="compareTitle">
+      <div class="block-head">
+        <h2 id="compareTitle">지역별 비교</h2>
+        <a class="text-link" href="compare.html">전체 비교표 보기</a>
+      </div>
+      <div class="table-wrap">
+        <table class="data mini-matrix" id="comparePreview">
+          <caption class="sr-only">표준어와 다섯 권역의 방언 비교</caption>
+          <thead>
+            <tr>
+              <th scope="col">표준어</th>
+              <th scope="col">경상</th>
+              <th scope="col">전라</th>
+              <th scope="col">충청</th>
+              <th scope="col">강원</th>
+              <th scope="col">제주</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" class="state">자료를 불러오는 중입니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="site-note">이 아카이브는 학습과 탐구를 위한 정리입니다. 항목마다 출처 확인 상태를 표시하고, 대조가 끝나지 않은 항목은 ‘검증 필요’로 남깁니다. 지역이나 세대 전체의 쓰임으로 일반화하지 않으며, 자료 원칙은 <a href="about.html">소개</a>에 적어 두었습니다.</p>
     </section>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><strong>말결 · 한국어 방언 아카이브</strong><small>@muhanu · 학습과 탐구를 위한 방언 자료</small></div>
+    <div class="footer-brand">
+      <strong>말결 · 한국어 방언 아카이브</strong>
+      <small>@muhanu · 학습과 탐구를 위한 방언 자료</small>
+    </div>
     <nav class="footer-links" aria-label="바닥글 메뉴">
       <a href="dictionary.html">어휘 사전</a>
       <a href="compare.html">지역별 비교</a>

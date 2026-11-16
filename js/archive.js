@@ -1,5 +1,5 @@
 import {
-  loadLexicon, escapeHTML, regionLabel, hasConsentedAudio, errorMessage, macroOf, regionMeta, REGIONS
+  loadLexicon, escapeHTML, regionLabel, hasConsentedAudio, errorMessage, macroOf, regionMeta
 } from "./common.js";
 
 const byId = id => document.getElementById(id);
@@ -14,12 +14,12 @@ function render() {
   byId("archivePending").textContent = `${items.length - consented.length}건`;
   byId("archiveCount").textContent = activeRegion
     ? `${activeRegion} 권역 · 공개 음성 ${visible.length}건`
-    : `전국 · 공개 음성 ${visible.length}건`;
+    : `다섯 권역 · 공개 음성 ${visible.length}건`;
 
   if (!visible.length) {
-    byId("archiveList").innerHTML = `<div class="empty-state">
+    byId("archiveList").innerHTML = `<div class="state">
       <p><strong>아직 공개 동의가 확인된 음성 자료가 없습니다.</strong></p>
-      <p style="margin-top:8px;font-size:.8rem">어휘 ${items.length}개 항목은 모두 글로만 공개되어 있습니다. 화자의 명시적 동의를 받은 음성만 이곳에 올라갑니다.</p>
+      <p>어휘 ${items.length}개 항목은 모두 글로만 공개되어 있습니다. 화자의 명시적 동의를 받은 음성만 이곳에 올라갑니다.</p>
     </div>`;
     return;
   }
@@ -27,10 +27,14 @@ function render() {
   byId("archiveList").innerHTML = visible.map(item => {
     const meta = regionMeta(macroOf(item));
     const examples = (item.example_sentences || []).map(example => escapeHTML(example.dialect)).join(" · ");
-    return `<article class="entry" style="--region-color:${meta ? meta.color : "#7ad8c4"};--region-soft:${meta ? meta.soft : "#16232b"}">
+    return `<article class="entry">
       <div class="entry-top">
-        <h2 class="entry-word"><span class="dialect">${escapeHTML(item.dialect_form)}</span><span class="sep" aria-hidden="true">/</span><span class="standard">${escapeHTML(item.standard_form)}</span></h2>
-        <span class="entry-region">${escapeHTML(regionLabel(item))}</span>
+        <h2 class="entry-word">
+          <span class="dialect">${escapeHTML(item.dialect_form)}</span>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="standard">${escapeHTML(item.standard_form)}</span>
+        </h2>
+        <span class="entry-region">${escapeHTML(meta ? meta.name : "지역 미확인")} · ${escapeHTML(regionLabel(item))}</span>
       </div>
       <dl class="entry-notes">
         <div class="note-row"><dt>세대</dt><dd>${escapeHTML((item.generation || []).join(" · ") || "정보 없음")}</dd></div>

@@ -1,6 +1,6 @@
 import {
   loadLexicon, escapeHTML, verifiedBadge, tagHtml, normalize, macroOf,
-  regionMeta, setRegionVars, GENERATIONS, CATEGORY_LABELS, hasConsentedAudio, errorMessage
+  regionMeta, GENERATIONS, CATEGORY_LABELS, hasConsentedAudio, errorMessage
 } from "./common.js";
 
 const byId = id => document.getElementById(id);
@@ -16,16 +16,17 @@ function searchable(item) {
   ].map(normalize).join(" ");
 }
 
+function exampleHTML(example) {
+  return `<div class="ex-group">
+    <p class="ex">${escapeHTML(example.dialect)}</p>
+    <p class="ex-standard">${escapeHTML(example.standard)}${example.sentence_type ? `<span class="ex-type">${escapeHTML(example.sentence_type)}</span>` : ""}</p>
+  </div>`;
+}
+
 function entryHTML(item) {
   const meta = regionMeta(macroOf(item));
   const place = item.region?.city || item.region?.province || "";
-  const examples = (item.example_sentences || []).map(example => `
-    <div class="example-line">
-      <span class="ex-dialect">${escapeHTML(example.dialect)}</span>
-      <span class="arrow" aria-hidden="true">→</span>
-      <span class="ex-standard">${escapeHTML(example.standard)}</span>
-      ${example.sentence_type ? `<span class="ex-type">${escapeHTML(example.sentence_type)}</span>` : ""}
-    </div>`).join("");
+  const examples = (item.example_sentences || []).map(exampleHTML).join("");
   const notes = [
     item.grammatical_note ? `<div class="note-row"><dt>문법</dt><dd>${escapeHTML(item.grammatical_note)}</dd></div>` : "",
     item.phonological_note ? `<div class="note-row"><dt>소리</dt><dd>${escapeHTML(item.phonological_note)}</dd></div>` : "",
@@ -35,7 +36,7 @@ function entryHTML(item) {
     ? `<audio controls preload="none" src="${escapeHTML(item.audio.file)}">오디오를 지원하지 않는 브라우저입니다.</audio>`
     : "";
 
-  return `<article class="entry" style="--region-color:${meta ? meta.color : "#7ad8c4"};--region-soft:${meta ? meta.soft : "#16232b"}">
+  return `<article class="entry">
     <div class="entry-top">
       <h2 class="entry-word">
         <span class="dialect">${escapeHTML(item.dialect_form)}</span>
@@ -78,11 +79,11 @@ function apply(filters, { syncUrl = true } = {}) {
   byId("resultCount").innerHTML = active
     ? `조건에 맞는 <strong>${items.length}</strong>개 항목`
     : `전체 <strong>${items.length}</strong>개 항목`;
-  byId("resultHint").textContent = filters.region ? `${filters.region} 권역` : "전국 5개 권역";
+  byId("resultHint").textContent = filters.region ? `${filters.region} 권역` : "다섯 권역 전체";
 
   list.innerHTML = items.length
     ? items.map(entryHTML).join("")
-    : `<p class="empty-state">조건에 맞는 항목이 없습니다. 검색어나 필터를 바꿔 보세요.</p>`;
+    : '<p class="state">조건에 맞는 항목이 없습니다. 검색어나 조건을 바꿔 보세요.</p>';
 
   if (syncUrl) {
     const next = new URLSearchParams();
@@ -110,9 +111,9 @@ async function init() {
       if (!item.part_of_speech) continue;
       posCount.set(item.part_of_speech, (posCount.get(item.part_of_speech) || 0) + 1);
     }
-    fillSelect(byId("posFilter"), [...posCount.keys()].sort((a, b) => posCount.get(b) - posCount.get(a)), "모든 품사");
-    byId("categoryFilter").innerHTML = '<option value="">모든 갈래</option><option value="lexical">어휘</option><option value="grammatical">문법</option>';
-    byId("generationFilter").innerHTML = `<option value="">모든 세대</option>${GENERATIONS.map(g => `<option value="${g}">${g}</option>`).join("")}`;
+    fillSelect(byId("posFilter"), [...posCount.keys()].sort((a, b) => posCount.get(b) - posCount.get(a)), "전체");
+    byId("categoryFilter").innerHTML = '<option value="">전체</option><option value="lexical">어휘</option><option value="grammatical">문법</option>';
+    byId("generationFilter").innerHTML = `<option value="">전체</option>${GENERATIONS.map(g => `<option value="${g}">${g}</option>`).join("")}`;
 
     byId("searchInput").value = params.get("q") || params.get("search") || "";
     byId("regionFilter").value = params.get("region") || "";
@@ -136,7 +137,8 @@ async function init() {
     });
 
     if (params.get("q")) {
-      byId("searchInput").setSelectionRange(byId("searchInput").value.length, byId("searchInput").value.length);
+      const input = byId("searchInput");
+      input.setSelectionRange(input.value.length, input.value.length);
     }
   } catch (error) {
     byId("resultCount").textContent = "자료 오류";
