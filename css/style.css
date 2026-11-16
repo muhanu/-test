@@ -55,6 +55,8 @@ body {
   font-size: 15px;
   line-height: 1.72;
   letter-spacing: -.011em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
 }
 
