@@ -451,6 +451,29 @@ table.data caption { text-align: left; }
 .matrix .form { color: var(--ink); font-weight: 600; }
 .matrix .form.is-standard { color: var(--faint); font-weight: 400; }
 
+/* 좌우로 밀지 않아도 되도록 좁은 화면에서는 개념별 목록으로 */
+.matrix-list { display: none; }
+.matrix-item { padding: 14px 0 12px; border-bottom: 1px solid var(--rule); }
+.matrix-item h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+.matrix-group { color: var(--faint); font-family: var(--sans); font-size: 0.72rem; font-weight: 400; }
+.matrix-item dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px 14px;
+  margin: 8px 0 0;
+}
+.matrix-item dl > div { display: flex; align-items: baseline; gap: 8px; }
+.matrix-item dt { color: var(--muted); font-size: 0.78rem; }
+.matrix-item dd { margin: 0; color: var(--faint); font-size: 0.86rem; }
+.matrix-item dd.diff { color: var(--ink); font-weight: 600; }
+
 /* ---------- 안내 문단 ---------- */
 
 .site-note {
@@ -958,10 +981,22 @@ code {
   .quiz-result { padding: 22px 18px; }
 }
 
+@media (max-width: 620px) {
+  .matrix-wrap { display: none; }
+  .matrix-list { display: block; }
+}
+
 @media (max-width: 520px) {
   body { font-size: 15.5px; }
 
   .brand-sub { display: none; }
+  .primary-nav { flex-wrap: nowrap; gap: 0 7px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .primary-nav::-webkit-scrollbar { display: none; }
+  .primary-nav a { padding: 4px 0; font-size: 0.78rem; }
+
+  .matrix-wrap { display: none; }
+  .matrix-list { display: block; }
+
   .search-form { flex-wrap: wrap; }
   .search-form input { flex: 1 1 100%; border-radius: var(--r) var(--r) 0 0; }
   .search-form button { flex: 1 1 100%; border-left: 0; border-top: 1px solid var(--rule-strong); border-radius: 0 0 var(--r) var(--r); }
@@ -969,8 +1004,9 @@ code {
   .region-row { grid-template-columns: 108px minmax(0, 1fr); gap: 4px 14px; }
   .region-words { font-size: 0.84rem; }
 
-  .toolbar { grid-template-columns: 1fr; }
-  .toolbar .field-search { grid-column: auto; }
+  .toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .toolbar .field-search { grid-column: 1 / -1; }
+  .toolbar .ghost-btn { grid-column: 1 / -1; }
 
   .note-row { grid-template-columns: 44px minmax(0, 1fr); gap: 10px; }
   .entry-word .dialect { font-size: 1.2rem; }
@@ -983,6 +1019,16 @@ code {
   .principle-grid { grid-template-columns: 1fr; gap: 18px; }
 
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+@media (max-width: 340px) {
+  .primary-nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: 2px 8px;
+    overflow: visible;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

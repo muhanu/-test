@@ -19,6 +19,19 @@ function matrixHTML(rows) {
   </tr>`).join("");
 }
 
+function matrixListHTML(rows) {
+  return rows.map(row => `<article class="matrix-item">
+    <h3>${escapeHTML(row.standard)}${row.group ? `<span class="matrix-group">${escapeHTML(row.group)}</span>` : ""}</h3>
+    <dl>
+      ${REGIONS.map(region => {
+        const form = row.forms?.[region.key] ?? "·";
+        const same = form === row.standard;
+        return `<div><dt>${escapeHTML(region.name)}</dt><dd class="${same ? "same" : "diff"}">${escapeHTML(form)}</dd></div>`;
+      }).join("\n      ")}
+    </dl>
+  </article>`).join("");
+}
+
 function interleaveByRegion(items) {
   const buckets = REGIONS.map(region => items.filter(item => macroOf(item) === region.key));
   const out = [];
@@ -67,6 +80,7 @@ async function init() {
   try {
     const [compare, lexicon] = await Promise.all([loadCompare(), loadLexicon()]);
     byId("matrixTable").querySelector("tbody").innerHTML = matrixHTML(compare);
+    byId("matrixList").innerHTML = matrixListHTML(compare);
     const covered = new Set(compare.flatMap(row => Object.keys(row.forms || {})));
     byId("matrixMeta").textContent = `${compare.length}개 개념 · ${covered.size}개 권역`;
 
@@ -91,6 +105,7 @@ async function init() {
     byId("matrixMeta").textContent = "자료 오류";
     const tbody = byId("matrixTable").querySelector("tbody");
     if (tbody) tbody.innerHTML = '<tr><td colspan="6" class="state is-error">자료를 불러오지 못했습니다.</td></tr>';
+    errorMessage("matrixList", error);
     errorMessage("pairList", error);
   }
 }
