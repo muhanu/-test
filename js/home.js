@@ -7,7 +7,7 @@ const byId = id => document.getElementById(id);
 function renderWord(card, item) {
   const meta = regionMeta(macroOf(item));
   const example = (item.example_sentences || [])[0];
-  const place = [item.region?.province, item.region?.city].filter(Boolean).join(" · ");
+  const place = item.region?.city || item.region?.province || "";
   card.querySelector(".word-card-head .region-pill").textContent = meta ? meta.name : "지역 미확인";
   card.querySelector(".word-card-head .region-pill").setAttribute("style", "");
   card.querySelector(".word-dialect").textContent = item.dialect_form;

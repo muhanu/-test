@@ -18,7 +18,7 @@ function searchable(item) {
 
 function entryHTML(item) {
   const meta = regionMeta(macroOf(item));
-  const place = [item.region?.province, item.region?.city].filter(Boolean).join(" · ");
+  const place = item.region?.city || item.region?.province || "";
   const examples = (item.example_sentences || []).map(example => `
     <div class="example-line">
       <span class="ex-dialect">${escapeHTML(example.dialect)}</span>
@@ -76,7 +76,7 @@ function apply(filters, { syncUrl = true } = {}) {
   const list = byId("results");
   const active = [filters.q, filters.region, filters.pos, filters.category, filters.generation].filter(Boolean).length;
   byId("resultCount").innerHTML = active
-    ? `<strong>${items.length}</strong>개 항목 · 조건 ${active}개`
+    ? `조건에 맞는 <strong>${items.length}</strong>개 항목`
     : `전체 <strong>${items.length}</strong>개 항목`;
   byId("resultHint").textContent = filters.region ? `${filters.region} 권역` : "전국 5개 권역";
 

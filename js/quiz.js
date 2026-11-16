@@ -16,6 +16,15 @@ let answered = false;
 
 const state = { locked: false };
 
+/* 받침에 따라 주격 보조사 은/는을 고른다. */
+function topicParticle(word) {
+  const chars = [...String(word)];
+  const last = chars.length ? chars[chars.length - 1] : "";
+  const code = last.charCodeAt(0);
+  const hasBatchim = code >= 0xac00 && code <= 0xd7a3 ? (code - 0xac00) % 28 !== 0 : false;
+  return hasBatchim ? "은" : "는";
+}
+
 function buildQuestion(item) {
   const type = Math.random() < 0.58 ? "meaning" : "region";
   if (type === "meaning") {
@@ -39,7 +48,7 @@ function buildQuestion(item) {
   return {
     type,
     item,
-    prompt: `‘${item.dialect_form}’은 어느 권역의 말일까요?`,
+    prompt: `‘${item.dialect_form}’${topicParticle(item.dialect_form)} 어느 권역의 말일까요?`,
     hint: `표준어 · ${item.standard_form}`,
     options: pickRandom(options, options.length),
     answer: regionMeta(macroOf(item))?.name || "지역 미확인"
