@@ -26,7 +26,8 @@ function topicParticle(word) {
 }
 
 function buildQuestion(item) {
-  const type = Math.random() < 0.58 ? "meaning" : "region";
+  // 한 권역만 골랐을 때는 지역 맞히기가 너무 쉬우므로 표준어 문제만 낸다.
+  const type = !region && Math.random() < 0.42 ? "region" : "meaning";
   if (type === "meaning") {
     const wrong = data
       .filter(other => other.id !== item.id && other.standard_form !== item.standard_form)
