@@ -4,15 +4,73 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090b0e">
-<meta name="description" content="경상도 방언의 종결어미와 문장 표현 예시를 살펴봅니다.">
-<title>문법 · 경상도 말 기록</title>
+<meta name="description" content="경상·전라·충청·강원·제주 대표 종결어미와 조사, 어간 변화를 권역별로 살펴봅니다.">
+<title>문법 · 말결 한국어 방언 아카이브</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-<header class="site-header"><div class="header-inner"><a class="site-name" href="index.html">경상도 말 기록</a><nav class="primary-nav" aria-label="주 메뉴"><a href="index.html">처음</a><a href="dictionary.html">어휘 사전</a><a href="compare.html">표준어 비교</a><a href="grammar.html" aria-current="page">문법</a><a href="archive.html">음성</a><a href="generation.html">세대</a><a href="about.html">소개</a></nav></div></header>
-<main id="main"><header class="page-heading"><p class="section-label">03 / 문법</p><h1>문법과 말끝</h1><p>종결어미와 문장 표현의 예시를 정리했습니다.</p></header><p class="inline-note">문맥과 화자에 따라 쓰임이 달라질 수 있습니다. 항목별 검증 상태를 확인해 주세요.</p><section id="grammarList" class="entry-list" aria-label="문법 항목"><p class="loading-state">불러오는 중…</p></section></main>
-<footer class="site-footer"><div class="footer-inner"><span>경상도 말 기록</span><a href="about.html">자료와 연구 방법</a><span>예시는 검증 전 자료입니다.</span></div></footer>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">말</span>
+      <span class="brand-text"><span class="brand-name">말결</span><span class="brand-sub">한국어 방언 아카이브</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="주 메뉴">
+      <a href="index.html">처음</a>
+      <a href="dictionary.html">어휘 사전</a>
+      <a href="compare.html">지역별 비교</a>
+      <a href="grammar.html" aria-current="page">문법</a>
+      <a href="quiz.html">방언 퀴즈</a>
+      <a href="archive.html">음성</a>
+      <a href="generation.html">통계</a>
+      <a href="about.html">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="eyebrow">03 / 문법</p>
+      <h1>문법과 말끝</h1>
+      <p>종결어미, 연결어미, 조사와 어간 변화 가운데 권역의 성격을 잘 보여 주는 항목을 모았습니다. 말끝 하나로 지역이 갈리는 지점을 봅니다.</p>
+    </header>
+
+    <div class="result-bar" style="margin-top:0">
+      <p id="grammarCount" role="status" aria-live="polite">불러오는 중…</p>
+      <span>권역을 골라 보세요</span>
+    </div>
+
+    <div class="chip-row" role="group" aria-label="권역 선택">
+      <button class="chip" type="button" data-region="" aria-pressed="true">전체</button>
+      <button class="chip" type="button" data-region="경상" aria-pressed="false"><span class="dot" style="color:#6aa8ff"></span>경상</button>
+      <button class="chip" type="button" data-region="전라" aria-pressed="false"><span class="dot" style="color:#ff8f6b"></span>전라</button>
+      <button class="chip" type="button" data-region="충청" aria-pressed="false"><span class="dot" style="color:#8ed896"></span>충청</button>
+      <button class="chip" type="button" data-region="강원" aria-pressed="false"><span class="dot" style="color:#b49bff"></span>강원</button>
+      <button class="chip" type="button" data-region="제주" aria-pressed="false"><span class="dot" style="color:#f2c264"></span>제주</button>
+    </div>
+
+    <section id="grammarList" class="entry-list" aria-label="문법 항목">
+      <p class="loading-state">불러오는 중…</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>말결 · 한국어 방언 아카이브</strong><small>@muhanu · 학습과 탐구를 위한 방언 자료</small></div>
+    <nav class="footer-links" aria-label="바닥글 메뉴">
+      <a href="dictionary.html">어휘 사전</a>
+      <a href="compare.html">지역별 비교</a>
+      <a href="quiz.html">방언 퀴즈</a>
+      <a href="about.html">자료 원칙</a>
+    </nav>
+    <span class="footer-meta">예시 자료 · 검증 전 항목 포함</span>
+  </div>
+</footer>
+
 <script type="module" src="js/grammar.js"></script>
 </body>
 </html>

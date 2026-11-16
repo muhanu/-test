@@ -1,17 +1,18 @@
 [
   {
-    "id": "gs-lex-0001",
+    "id": "gs-0001",
     "dialect_form": "어데",
     "standard_form": "어디",
     "meaning": "장소를 묻거나 가리키는 말",
     "part_of_speech": "부사",
     "category": "lexical",
-    "phonological_note": "표준어 '어디'의 모음 'ㅣ'가 'ㅔ'로 실현되는 사례로 추정 (검증 필요)",
-    "grammatical_note": "종결어미 '-노'와 결합해 설명의문문을 구성",
+    "phonological_note": "표준어 '어디'에 대응하며 모음이 'ㅔ'로 실현된다.",
+    "grammatical_note": "의문사 '어데'와 종결어미 '-노'가 결합해 설명의문문을 만든다.",
     "region": {
       "province": "경남",
       "city": "부산",
-      "sub_dialect": "경남 동부"
+      "sub_dialect": "경남 동부",
+      "macro_region": "경상"
     },
     "generation": [
       "노년",
@@ -25,15 +26,15 @@
       }
     ],
     "audio": {
-      "file": "audio/gs-lex-0001.mp3",
+      "file": "audio/gs-0001.mp3",
       "consent_obtained": false
     },
     "related_grammar_ids": [
-      "gr-0001"
+      "gr-gs-01"
     ],
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (실제 조사 필요)",
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
       "verified": false
     },
     "tags": [
@@ -43,18 +44,19 @@
     ]
   },
   {
-    "id": "gs-lex-0002",
+    "id": "gs-0002",
     "dialect_form": "와",
     "standard_form": "왜",
     "meaning": "이유를 묻는 말",
     "part_of_speech": "부사",
     "category": "lexical",
-    "phonological_note": "표준어 '왜[wɛ]'의 이중모음이 단모음 '와[wa]'로 단순화된 사례로 추정 (검증 필요)",
-    "grammatical_note": "종결어미 '-노'와 결합해 이유를 묻는 설명의문문 구성",
+    "phonological_note": "표준어 '왜'의 이중모음이 단모음으로 실현되어 '와'로 들린다.",
+    "grammatical_note": "이유를 묻는 의문사로 '-노'와 함께 쓰인다.",
     "region": {
       "province": "경북",
       "city": "대구",
-      "sub_dialect": "경북 남부"
+      "sub_dialect": "경북 남부",
+      "macro_region": "경상"
     },
     "generation": [
       "청년",
@@ -69,15 +71,16 @@
       }
     ],
     "audio": {
-      "file": "audio/gs-lex-0002.mp3",
+      "file": "audio/gs-0002.mp3",
       "consent_obtained": false
     },
     "related_grammar_ids": [
-      "gr-0001"
+      "gr-gs-01",
+      "gr-gs-03"
     ],
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (실제 조사 필요)",
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
       "verified": false
     },
     "tags": [
@@ -87,18 +90,19 @@
     ]
   },
   {
-    "id": "gs-lex-0003",
+    "id": "gs-0003",
     "dialect_form": "뭐라카노",
-    "standard_form": "뭐라고 하니 / 뭐라고 말하는 거니",
+    "standard_form": "뭐라고 하니",
     "meaning": "상대의 말을 되묻거나 이해하지 못했을 때 쓰는 말",
     "part_of_speech": "동사구",
     "category": "grammatical",
-    "phonological_note": "'뭐라고 하-'가 축약되어 '뭐라카-'로 실현",
-    "grammatical_note": "'-노'(설명의문문 어미) 결합, 인용동사 '하다'의 방언형 '카다' 사용",
+    "phonological_note": "'뭐라고 하-'가 축약되어 '뭐라카-'로 실현된다.",
+    "grammatical_note": "인용동사 '하다'의 방언형 '카다'에 '-노'가 결합한다.",
     "region": {
       "province": "경남",
       "city": "경남 전역",
-      "sub_dialect": "경남"
+      "sub_dialect": "경남",
+      "macro_region": "경상"
     },
     "generation": [
       "청소년",
@@ -114,16 +118,16 @@
       }
     ],
     "audio": {
-      "file": "audio/gs-lex-0003.mp3",
+      "file": "audio/gs-0003.mp3",
       "consent_obtained": false
     },
     "related_grammar_ids": [
-      "gr-0001",
-      "gr-0003"
+      "gr-gs-01",
+      "gr-gs-03"
     ],
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (실제 조사 필요)",
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
       "verified": false
     },
     "tags": [
@@ -132,59 +136,68 @@
     ]
   },
   {
-    "id": "gs-lex-0004",
-    "dialect_form": "가가",
-    "standard_form": "그 아이가 / 그 애가",
-    "meaning": "제3자를 가리키는 대명사구",
-    "part_of_speech": "대명사+조사",
-    "category": "lexical",
-    "phonological_note": "'그 아이가'의 축약형으로 추정 (검증 필요)",
-    "grammatical_note": "주격조사 '가' 반복 결합",
+    "id": "gs-0004",
+    "dialect_form": "아이가",
+    "standard_form": "아니야",
+    "meaning": "아니다를 뜻하는 부정 표현",
+    "part_of_speech": "형용사 활용",
+    "category": "grammatical",
+    "phonological_note": null,
+    "grammatical_note": "서술격 '아니다'의 활용형이 굳어 '-가'로 끝나는 형태로 쓰인다.",
     "region": {
       "province": "경남",
-      "city": "부산",
-      "sub_dialect": "경남 동부"
+      "city": "경남 전역",
+      "sub_dialect": "경남",
+      "macro_region": "경상"
     },
     "generation": [
-      "청소년",
       "청년",
-      "중년"
+      "중년",
+      "노년"
     ],
     "example_sentences": [
       {
-        "dialect": "가가 그캤다.",
-        "standard": "그 애가 그렇게 말했다.",
+        "dialect": "내 책 아이가.",
+        "standard": "내 책 아니야.",
+        "sentence_type": "평서문"
+      },
+      {
+        "dialect": "아이가, 그게 아니고.",
+        "standard": "아니야, 그게 아니고.",
         "sentence_type": "평서문"
       }
     ],
     "audio": {
-      "file": "audio/gs-lex-0004.mp3",
+      "file": "audio/gs-0004.mp3",
       "consent_obtained": false
     },
-    "related_grammar_ids": [],
+    "related_grammar_ids": [
+      "gr-gs-05"
+    ],
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (실제 조사 필요)",
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
       "verified": false
     },
     "tags": [
-      "대명사",
-      "부산"
+      "부정",
+      "아니다"
     ]
   },
   {
-    "id": "gs-lex-0005",
+    "id": "gs-0005",
     "dialect_form": "하이소",
     "standard_form": "하세요",
-    "meaning": "정중한 명령·권유",
+    "meaning": "정중하게 시키는 말",
     "part_of_speech": "동사(명령형)",
     "category": "grammatical",
     "phonological_note": null,
-    "grammatical_note": "높임 명령형 어미 '-이소' 결합 (표준어 '-세요'에 대응)",
+    "grammatical_note": "높임 명령형 어미 '-이소'가 결합한다.",
     "region": {
       "province": "경남",
       "city": "경남 전역",
-      "sub_dialect": "경남"
+      "sub_dialect": "경남",
+      "macro_region": "경상"
     },
     "generation": [
       "중년",
@@ -198,15 +211,15 @@
       }
     ],
     "audio": {
-      "file": "audio/gs-lex-0005.mp3",
+      "file": "audio/gs-0005.mp3",
       "consent_obtained": false
     },
     "related_grammar_ids": [
-      "gr-0004"
+      "gr-gs-04"
     ],
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (실제 조사 필요)",
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
       "verified": false
     },
     "tags": [
@@ -215,18 +228,19 @@
     ]
   },
   {
-    "id": "gs-lex-0006",
+    "id": "gs-0006",
     "dialect_form": "뭇나",
     "standard_form": "먹었니",
-    "meaning": "먹었는지를 묻는 판정의문문",
+    "meaning": "먹었는지를 묻는 말",
     "part_of_speech": "동사(의문형)",
     "category": "grammatical",
-    "phonological_note": "'먹었나'의 축약형",
-    "grammatical_note": "판정의문문 어미 '-나' 결합 (의문사 없음)",
+    "phonological_note": "'먹었나'가 축약되어 '뭇나'로 실현된다.",
+    "grammatical_note": "판정의문문 어미 '-나'가 결합한다.",
     "region": {
       "province": "경북",
       "city": "대구",
-      "sub_dialect": "경북 남부"
+      "sub_dialect": "경북 남부",
+      "macro_region": "경상"
     },
     "generation": [
       "청년",
@@ -241,20 +255,2254 @@
       }
     ],
     "audio": {
-      "file": "audio/gs-lex-0006.mp3",
+      "file": "audio/gs-0006.mp3",
       "consent_obtained": false
     },
     "related_grammar_ids": [
-      "gr-0002"
+      "gr-gs-02"
     ],
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (실제 조사 필요)",
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
       "verified": false
     },
     "tags": [
       "의문문",
       "판정의문"
+    ]
+  },
+  {
+    "id": "gs-0007",
+    "dialect_form": "억수로",
+    "standard_form": "아주, 매우",
+    "meaning": "정도가 매우 심함을 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "첫음절에 강세가 놓여 '억수로'로 들린다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "경남",
+      "city": "부산·경남",
+      "sub_dialect": "경남 동부",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "오늘 억수로 덥다.",
+        "standard": "오늘 아주 덥다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0007.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "정도",
+      "부사",
+      "부산"
+    ]
+  },
+  {
+    "id": "gs-0008",
+    "dialect_form": "마이",
+    "standard_form": "많이",
+    "meaning": "수를 넉넉하게 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "첫소리 'ㅎ'이 약화되어 '마이'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "경북",
+      "city": "경북 전역",
+      "sub_dialect": "경북",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "마이 묵어라.",
+        "standard": "많이 먹어라.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0008.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "수량",
+      "부사"
+    ]
+  },
+  {
+    "id": "gs-0009",
+    "dialect_form": "정구지",
+    "standard_form": "부추",
+    "meaning": "부추를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "경북",
+      "city": "경북·경남",
+      "sub_dialect": "경상 북부",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "정구지 넣고 전 부치자.",
+        "standard": "부추 넣고 전 부치자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0009.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "채소",
+      "음식"
+    ]
+  },
+  {
+    "id": "gs-0010",
+    "dialect_form": "고마",
+    "standard_form": "그만",
+    "meaning": "더 하지 말라고 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "'그만'의 첫소리가 약화되어 '고마'로 실현된 형태로 본다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "경남",
+      "city": "경남 전역",
+      "sub_dialect": "경남",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "고마 해라.",
+        "standard": "그만 해라.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0010.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "부사",
+      "금지"
+    ]
+  },
+  {
+    "id": "gs-0011",
+    "dialect_form": "인자",
+    "standard_form": "이제",
+    "meaning": "지금부터를 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "경남",
+      "city": "경남·경북",
+      "sub_dialect": "경상",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "인자 집에 가자.",
+        "standard": "이제 집에 가자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0011.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "시간",
+      "부사"
+    ]
+  },
+  {
+    "id": "gs-0012",
+    "dialect_form": "댕기다",
+    "standard_form": "다니다",
+    "meaning": "어디를 오가며 다니다",
+    "part_of_speech": "동사",
+    "category": "lexical",
+    "phonological_note": "'다니-'의 'ㄴ'이 'ㅇ'으로 바뀌어 '댕기-'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "경남",
+      "city": "부산",
+      "sub_dialect": "경남 동부",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "어데 댕기노?",
+        "standard": "어디 다니니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0012.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-gs-01"
+    ],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "이동",
+      "동사",
+      "부산"
+    ]
+  },
+  {
+    "id": "gs-0013",
+    "dialect_form": "온나",
+    "standard_form": "오너라",
+    "meaning": "가까이 오라고 이르는 말",
+    "part_of_speech": "동사(명령형)",
+    "category": "grammatical",
+    "phonological_note": null,
+    "grammatical_note": "친근하게 시키는 명령형 어미 '-온나'가 결합한다.",
+    "region": {
+      "province": "경남",
+      "city": "경남 전역",
+      "sub_dialect": "경남",
+      "macro_region": "경상"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "이리 온나.",
+        "standard": "이리 오너라.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gs-0013.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "명령문",
+      "친근"
+    ]
+  },
+  {
+    "id": "jl-0001",
+    "dialect_form": "거시기",
+    "standard_form": "그것, 그 사람",
+    "meaning": "이름이 잘 떠오르지 않을 때 두루 이르는 말",
+    "part_of_speech": "대명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": "문맥에 따라 사람·사물·일을 두루 가리킨다.",
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "거시기 좀 갖다 줘.",
+        "standard": "그것 좀 갖다 줘.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0001.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "대명사",
+      "전남"
+    ]
+  },
+  {
+    "id": "jl-0002",
+    "dialect_form": "시방",
+    "standard_form": "지금",
+    "meaning": "바로 이때를 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "전북",
+      "city": "전북·전남",
+      "sub_dialect": "전라",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "시방 뭐 하노?",
+        "standard": "지금 뭐 하니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0002.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "시간",
+      "부사"
+    ]
+  },
+  {
+    "id": "jl-0003",
+    "dialect_form": "쪼매",
+    "standard_form": "조금",
+    "meaning": "분량이 적음을 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "'조금'이 '쪼매'로 축약되어 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "쪼매 기다려.",
+        "standard": "조금 기다려.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0003.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "수량",
+      "부사"
+    ]
+  },
+  {
+    "id": "jl-0004",
+    "dialect_form": "긍께",
+    "standard_form": "그러니까",
+    "meaning": "앞말을 받아 이유를 잇는 말",
+    "part_of_speech": "접속부사",
+    "category": "lexical",
+    "phonological_note": "'그러니까'가 축약되어 '긍께'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "긍께 내가 뭐랬어.",
+        "standard": "그러니까 내가 뭐랬어.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0004.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "접속",
+      "담화"
+    ]
+  },
+  {
+    "id": "jl-0005",
+    "dialect_form": "아따",
+    "standard_form": "아이고",
+    "meaning": "놀라움이나 감탄을 나타내는 말",
+    "part_of_speech": "감탄사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "아따, 대단하다.",
+        "standard": "아이고, 대단하다.",
+        "sentence_type": "감탄문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0005.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "감탄",
+      "담화"
+    ]
+  },
+  {
+    "id": "jl-0006",
+    "dialect_form": "오메",
+    "standard_form": "아이고",
+    "meaning": "안타까움이나 감탄을 나타내는 말",
+    "part_of_speech": "감탄사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "전북",
+      "city": "전북 전역",
+      "sub_dialect": "전북",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "오메, 큰일 났네.",
+        "standard": "아이고, 큰일 났네.",
+        "sentence_type": "감탄문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0006.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "감탄",
+      "담화"
+    ]
+  },
+  {
+    "id": "jl-0007",
+    "dialect_form": "솔",
+    "standard_form": "부추",
+    "meaning": "부추를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "솔로 김치 담갔어.",
+        "standard": "부추로 김치 담갔어.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0007.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "채소",
+      "음식"
+    ]
+  },
+  {
+    "id": "jl-0008",
+    "dialect_form": "을매나",
+    "standard_form": "얼마나",
+    "meaning": "정도를 묻거나 강조하는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": "'얼마나'가 '을매나'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "전북",
+      "city": "전북 전역",
+      "sub_dialect": "전북",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "을매나 좋아하노?",
+        "standard": "얼마나 좋아하니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0008.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "정도",
+      "의문"
+    ]
+  },
+  {
+    "id": "jl-0009",
+    "dialect_form": "가꼬",
+    "standard_form": "가지고",
+    "meaning": "앞말을 이어 수단이나 상태를 나타내는 말",
+    "part_of_speech": "동사(연결형)",
+    "category": "grammatical",
+    "phonological_note": "'가지고'의 축약형으로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "밥 가꼬 가자.",
+        "standard": "밥 가지고 가자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0009.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "연결",
+      "조사성"
+    ]
+  },
+  {
+    "id": "jl-0010",
+    "dialect_form": "뭐시여",
+    "standard_form": "무엇입니까",
+    "meaning": "무엇인지 정중하게 묻는 말",
+    "part_of_speech": "대명사(의문)",
+    "category": "grammatical",
+    "phonological_note": "'무엇이여'가 '뭐시여'로 축약된다.",
+    "grammatical_note": "의문사 '뭐시'에 '-여'가 결합해 정중한 의문을 만든다.",
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "이게 뭐시여?",
+        "standard": "이게 무엇입니까?",
+        "sentence_type": "의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0010.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "의문",
+      "높임"
+    ]
+  },
+  {
+    "id": "jl-0011",
+    "dialect_form": "서방",
+    "standard_form": "남편",
+    "meaning": "남편을 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "전남",
+      "city": "전남 전역",
+      "sub_dialect": "전남",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "서방은 어데 갔노?",
+        "standard": "남편은 어디 갔니?",
+        "sentence_type": "설명의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0011.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "가족",
+      "호칭"
+    ]
+  },
+  {
+    "id": "jl-0012",
+    "dialect_form": "짐치",
+    "standard_form": "김치",
+    "meaning": "김치를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": "첫소리 'ㄱ'이 'ㅣ' 앞에서 'ㅈ'으로 구개음화되어 '짐치'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "전북",
+      "city": "전북 전역",
+      "sub_dialect": "전북",
+      "macro_region": "전라"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "짐치가 아주 맛있다.",
+        "standard": "김치가 아주 맛있다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jl-0012.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "음식",
+      "구개음화"
+    ]
+  },
+  {
+    "id": "cc-0001",
+    "dialect_form": "시방",
+    "standard_form": "지금",
+    "meaning": "바로 이때를 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충남",
+      "city": "충남·충북",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "시방 어디 가유?",
+        "standard": "지금 어디 가세요?",
+        "sentence_type": "의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0001.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-cc-01"
+    ],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "시간",
+      "부사"
+    ]
+  },
+  {
+    "id": "cc-0002",
+    "dialect_form": "그려",
+    "standard_form": "그래",
+    "meaning": "긍정이나 동의를 나타내는 말",
+    "part_of_speech": "감탄사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충남",
+      "city": "충남 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "그려, 맞다.",
+        "standard": "그래, 맞다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0002.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "동의",
+      "담화"
+    ]
+  },
+  {
+    "id": "cc-0003",
+    "dialect_form": "거그",
+    "standard_form": "거기",
+    "meaning": "듣는 사람 가까이를 가리키는 말",
+    "part_of_speech": "대명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충북",
+      "city": "충북 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "거그 앉아.",
+        "standard": "거기 앉아.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0003.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "장소",
+      "대명사"
+    ]
+  },
+  {
+    "id": "cc-0004",
+    "dialect_form": "여그",
+    "standard_form": "여기",
+    "meaning": "말하는 사람 가까이를 가리키는 말",
+    "part_of_speech": "대명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충북",
+      "city": "충북 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "여그 좀 봐.",
+        "standard": "여기 좀 봐.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0004.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "장소",
+      "대명사"
+    ]
+  },
+  {
+    "id": "cc-0005",
+    "dialect_form": "응게",
+    "standard_form": "그러니까",
+    "meaning": "앞말을 받아 잇는 말",
+    "part_of_speech": "접속부사",
+    "category": "lexical",
+    "phonological_note": "'그러니까'가 '응게'로 축약된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "충남",
+      "city": "충남 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "응게 내가 그랬잖아.",
+        "standard": "그러니까 내가 그랬잖아.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0005.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "접속",
+      "담화"
+    ]
+  },
+  {
+    "id": "cc-0006",
+    "dialect_form": "하구",
+    "standard_form": "하고",
+    "meaning": "앞말을 이어 나열하는 말",
+    "part_of_speech": "조사(연결)",
+    "category": "grammatical",
+    "phonological_note": "'하고'의 모음이 'ㅜ'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "충남",
+      "city": "충남 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "너하구 나",
+        "standard": "너하고 나",
+        "sentence_type": "나열"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0006.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "연결",
+      "조사"
+    ]
+  },
+  {
+    "id": "cc-0007",
+    "dialect_form": "바우",
+    "standard_form": "바위",
+    "meaning": "바위를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": "'바위'의 반모음이 약화되어 '바우'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "충북",
+      "city": "충북 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "바우에 올라가자.",
+        "standard": "바위에 올라가자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0007.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "자연",
+      "명사"
+    ]
+  },
+  {
+    "id": "cc-0008",
+    "dialect_form": "부루",
+    "standard_form": "상추",
+    "meaning": "상추를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충남",
+      "city": "충남·충북",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "부루 좀 따 와.",
+        "standard": "상추 좀 따 와.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0008.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "채소",
+      "명사"
+    ]
+  },
+  {
+    "id": "cc-0009",
+    "dialect_form": "강냉이",
+    "standard_form": "옥수수",
+    "meaning": "옥수수를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충북",
+      "city": "충북 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "강냉이 삶아라.",
+        "standard": "옥수수 삶아라.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0009.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "곡물",
+      "음식"
+    ]
+  },
+  {
+    "id": "cc-0010",
+    "dialect_form": "올갱이",
+    "standard_form": "다슬기",
+    "meaning": "다슬기를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "충북",
+      "city": "충북 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "올갱이 잡으러 가자.",
+        "standard": "다슬기 잡으러 가자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0010.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "수산",
+      "자연"
+    ]
+  },
+  {
+    "id": "cc-0011",
+    "dialect_form": "뭐여",
+    "standard_form": "뭐야",
+    "meaning": "무엇인지 묻는 말",
+    "part_of_speech": "대명사(의문)",
+    "category": "grammatical",
+    "phonological_note": "'뭐야'의 종결 표현이 '뭐여'로 실현된다.",
+    "grammatical_note": null,
+    "region": {
+      "province": "충남",
+      "city": "충남 전역",
+      "sub_dialect": "충청",
+      "macro_region": "충청"
+    },
+    "generation": [
+      "청년",
+      "중년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "이게 뭐여?",
+        "standard": "이게 뭐야?",
+        "sentence_type": "의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/cc-0011.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "의문",
+      "담화"
+    ]
+  },
+  {
+    "id": "gw-0001",
+    "dialect_form": "강냉이",
+    "standard_form": "옥수수",
+    "meaning": "옥수수를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "영서",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "강냉이 많이 심었네.",
+        "standard": "옥수수 많이 심었네.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0001.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "곡물",
+      "영서"
+    ]
+  },
+  {
+    "id": "gw-0002",
+    "dialect_form": "부루",
+    "standard_form": "상추",
+    "meaning": "상추를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "영동",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "부루 쌈 싸 먹자.",
+        "standard": "상추 쌈 싸 먹자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0002.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "채소",
+      "영동"
+    ]
+  },
+  {
+    "id": "gw-0003",
+    "dialect_form": "골",
+    "standard_form": "골짜기",
+    "meaning": "산과 산 사이의 골짜기",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "영서",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "저 골로 올라가자.",
+        "standard": "저 골짜기로 올라가자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0003.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "지형",
+      "산간"
+    ]
+  },
+  {
+    "id": "gw-0004",
+    "dialect_form": "올갱이",
+    "standard_form": "다슬기",
+    "meaning": "다슬기를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "영월·정선",
+      "sub_dialect": "영서",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "올갱이국 끓여 왔어.",
+        "standard": "다슬기국 끓여 왔어.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0004.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "수산",
+      "음식",
+      "영서"
+    ]
+  },
+  {
+    "id": "gw-0005",
+    "dialect_form": "달구지",
+    "standard_form": "수레",
+    "meaning": "짐을 실어 나르는 수레",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "강원",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "달구지에 짐을 싣자.",
+        "standard": "수레에 짐을 싣자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0005.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "농사",
+      "이동"
+    ]
+  },
+  {
+    "id": "gw-0006",
+    "dialect_form": "울",
+    "standard_form": "울타리",
+    "meaning": "집이나 밭을 두른 울타리",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "영서",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "울을 보수해야겠다.",
+        "standard": "울타리를 보수해야겠다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0006.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "농사",
+      "지형"
+    ]
+  },
+  {
+    "id": "gw-0007",
+    "dialect_form": "아재",
+    "standard_form": "아저씨",
+    "meaning": "부모 또래의 남자를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "강원",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "옆집 아재가 왔다.",
+        "standard": "옆집 아저씨가 왔다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0007.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "호칭",
+      "친근"
+    ]
+  },
+  {
+    "id": "gw-0008",
+    "dialect_form": "아재비",
+    "standard_form": "삼촌",
+    "meaning": "아버지의 형제를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "영동",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "아재비 댁에 갔다 왔어.",
+        "standard": "삼촌 댁에 갔다 왔어.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0008.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "호칭",
+      "가족"
+    ]
+  },
+  {
+    "id": "gw-0009",
+    "dialect_form": "아지매",
+    "standard_form": "아주머니",
+    "meaning": "부모 또래의 여자를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 전역",
+      "sub_dialect": "강원",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "아지매, 이거 얼마여?",
+        "standard": "아주머니, 이거 얼마예요?",
+        "sentence_type": "의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0009.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "호칭",
+      "친근"
+    ]
+  },
+  {
+    "id": "gw-0010",
+    "dialect_form": "너와",
+    "standard_form": "너와(지붕 재료)",
+    "meaning": "너와집 지붕에 쓰는 얇은 나무 조각",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": "'너와'는 지붕을 이는 나무 조각과 그렇게 이은 집을 이른다.",
+    "region": {
+      "province": "강원",
+      "city": "강원 산간",
+      "sub_dialect": "영동",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "너와집이 아직 남아 있다.",
+        "standard": "널조각 지붕집이 아직 남아 있다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0010.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "주거",
+      "산간"
+    ]
+  },
+  {
+    "id": "gw-0011",
+    "dialect_form": "바지게",
+    "standard_form": "등짐지게",
+    "meaning": "등에 지고 다니는 나무 지게",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "강원",
+      "city": "강원 산간",
+      "sub_dialect": "영동",
+      "macro_region": "강원"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "바지게에 나물을 졌다.",
+        "standard": "등짐지게에 나물을 졌다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/gw-0011.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "농사",
+      "산간"
+    ]
+  },
+  {
+    "id": "jj-0001",
+    "dialect_form": "하영",
+    "standard_form": "많이",
+    "meaning": "수를 넉넉하게 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "하영 먹어라.",
+        "standard": "많이 먹어라.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0001.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "수량",
+      "부사"
+    ]
+  },
+  {
+    "id": "jj-0002",
+    "dialect_form": "혼저",
+    "standard_form": "빨리",
+    "meaning": "서두르라고 이르는 말",
+    "part_of_speech": "부사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "혼저 옵서예.",
+        "standard": "빨리 오세요.",
+        "sentence_type": "명령문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0002.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "시간",
+      "부사"
+    ]
+  },
+  {
+    "id": "jj-0003",
+    "dialect_form": "무사",
+    "standard_form": "왜",
+    "meaning": "이유를 묻는 말",
+    "part_of_speech": "부사(의문)",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": "이유를 묻는 의문사로 문장 앞에 놓인다.",
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "무사 그라우?",
+        "standard": "왜 그러세요?",
+        "sentence_type": "의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0003.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "이유",
+      "의문"
+    ]
+  },
+  {
+    "id": "jj-0004",
+    "dialect_form": "감저",
+    "standard_form": "고구마",
+    "meaning": "고구마를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "감저 구웠수다.",
+        "standard": "고구마 구웠습니다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0004.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [
+      "gr-jj-03"
+    ],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "작물",
+      "음식"
+    ]
+  },
+  {
+    "id": "jj-0005",
+    "dialect_form": "지슬",
+    "standard_form": "감자",
+    "meaning": "감자를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "지슬 캐러 가자.",
+        "standard": "감자 캐러 가자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0005.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "작물",
+      "농사"
+    ]
+  },
+  {
+    "id": "jj-0006",
+    "dialect_form": "세빗",
+    "standard_form": "부추",
+    "meaning": "부추를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "세빗으로 국을 끓였다.",
+        "standard": "부추로 국을 끓였다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0006.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "채소",
+      "음식"
+    ]
+  },
+  {
+    "id": "jj-0007",
+    "dialect_form": "어드",
+    "standard_form": "어디",
+    "meaning": "장소를 묻는 말",
+    "part_of_speech": "부사(의문)",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "어드 가우꽈?",
+        "standard": "어디 가십니까?",
+        "sentence_type": "의문문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0007.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "장소",
+      "의문"
+    ]
+  },
+  {
+    "id": "jj-0008",
+    "dialect_form": "아방",
+    "standard_form": "아버지",
+    "meaning": "아버지를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "아방은 들에 갔수다.",
+        "standard": "아버지는 들에 갔습니다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0008.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "가족",
+      "호칭"
+    ]
+  },
+  {
+    "id": "jj-0009",
+    "dialect_form": "어멍",
+    "standard_form": "어머니",
+    "meaning": "어머니를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "어멍이 밥 지었수다.",
+        "standard": "어머니가 밥 지었습니다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0009.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "가족",
+      "호칭"
+    ]
+  },
+  {
+    "id": "jj-0010",
+    "dialect_form": "하르방",
+    "standard_form": "할아버지",
+    "meaning": "할아버지를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "하르방이 웃수다.",
+        "standard": "할아버지가 웃으십니다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0010.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "가족",
+      "호칭"
+    ]
+  },
+  {
+    "id": "jj-0011",
+    "dialect_form": "할망",
+    "standard_form": "할머니",
+    "meaning": "할머니를 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "할망이 이야기해 줬수다.",
+        "standard": "할머니가 이야기해 주셨습니다.",
+        "sentence_type": "평서문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0011.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "가족",
+      "호칭"
+    ]
+  },
+  {
+    "id": "jj-0012",
+    "dialect_form": "드르",
+    "standard_form": "들판",
+    "meaning": "집 밖의 들을 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": null,
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "드르에 나가 볼까.",
+        "standard": "들판에 나가 볼까.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0012.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "지형",
+      "자연"
+    ]
+  },
+  {
+    "id": "jj-0013",
+    "dialect_form": "오름",
+    "standard_form": "산봉우리",
+    "meaning": "화산이 만든 제주의 언덕을 이르는 말",
+    "part_of_speech": "명사",
+    "category": "lexical",
+    "phonological_note": null,
+    "grammatical_note": "제주의 화산 지형을 이르는 지역어로 널리 쓰인다.",
+    "region": {
+      "province": "제주",
+      "city": "제주 전역",
+      "sub_dialect": "제주어",
+      "macro_region": "제주"
+    },
+    "generation": [
+      "청년",
+      "중년",
+      "노년"
+    ],
+    "example_sentences": [
+      {
+        "dialect": "오름에 올라가 보자.",
+        "standard": "산봉우리에 올라가 보자.",
+        "sentence_type": "청유문"
+      }
+    ],
+    "audio": {
+      "file": "audio/jj-0013.mp3",
+      "consent_obtained": false
+    },
+    "related_grammar_ids": [],
+    "source": {
+      "type": "reference",
+      "reference": "지역어 어휘 자료 대조 (검증 전 예시)",
+      "verified": false
+    },
+    "tags": [
+      "지형",
+      "자연"
     ]
   }
 ]

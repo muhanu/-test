@@ -1,30 +1,78 @@
-# 말결 · 경상도 방언 아카이브
+# 말결 · 한국어 방언 아카이브
 
-경상도 방언의 어휘와 문법 예시를 지역·세대 정보와 함께 살펴보는 GitHub Pages용 탐구 프로젝트입니다. 현재 데이터는 사이트 구조를 보여주기 위한 예시이며, 실제 조사와 출처 확인을 거쳐야 합니다.
+경상·전라·충청·강원·제주 다섯 권역의 방언을 어휘와 문법, 예문으로 모아 견주어 보는 정적 웹 아카이브입니다. GitHub Pages로 배포되며 `gstalk.kro.kr` 도메인을 사용합니다.
 
-## 실행하기
+## 무엇을 담았나
 
-1. 저장소의 **Settings → Pages**에서 배포 브랜치와 폴더를 선택합니다.
-2. 로컬에서는 VS Code의 Live Server 등 로컬 웹 서버로 `index.html`을 엽니다.
-3. JSON 데이터는 브라우저 보안 정책 때문에 파일을 직접 열 때 불러오지 못할 수 있습니다.
+- **어휘 60개** — 권역마다 11~13개씩 균형 있게 배치했습니다. 방언형·표준어·뜻·품사·갈래·음운 노트·문법 노트·지역·세대·예문·태그를 함께 기록합니다.
+- **문법 18개** — 권역별 대표 종결어미, 연결어미, 조사, 어간 변화 항목입니다.
+- **비교 11개** — 표준어 개념 하나에 다섯 권역의 대응 어형을 나란히 놓은 표입니다.
 
 ## 구성
 
-- `index.html`: 소개와 탐색 홈
-- `dictionary.html`: 어휘 검색 및 지역·세대 필터
-- `compare.html`: 표준어와 방언 예시 비교
-- `grammar.html`: 문법 항목
-- `archive.html`: 공개 동의가 확인된 음성 자료
-- `generation.html`: 등록 예시의 세대 태그 집계
-- `about.html`: 자료 원칙과 한계
-- `css/style.css`: 공통 반응형 디자인
-- `js/`: 페이지 기능과 공통 데이터 로더
-- `data/`: 예시 어휘·문법 데이터
-- `audio/`: 동의 확인을 마친 음성 파일
+| 경로 | 내용 |
+| --- | --- |
+| `index.html` | 히어로, 오늘의 방언(무작위), 빠른 검색, 5대 권역 바로가기, 전체 통계 |
+| `dictionary.html` | 실시간 검색, 권역·품사·갈래·세대 필터, URL 쿼리(`?region=경상`, `?q=검색어`) |
+| `compare.html` | 표준어 하나에 다섯 권역을 놓은 비교표, 표준어 ↔ 방언 예문 비교 |
+| `grammar.html` | 권역별 문법 항목 카드 |
+| `quiz.html` | 뜻 맞히기·지역 맞히기 5문제 라운드, 즉시 피드백과 해설, 점수와 다시 풀기 |
+| `archive.html` | 화자 동의 원칙과 동의된 음성 필터(현재 공개 음성 없음) |
+| `generation.html` | 권역별 어휘 분포, 세대 태그 분포, 갈래별 분포 막대 그래프 |
+| `about.html` | 취지, 범위, 검증·출처, 음성 동의, 한계 |
+| `css/style.css` | 다크 에디토리얼 디자인 시스템, 권역별 컬러 토큰, 반응형(360px~) |
+| `js/` | 페이지별 기능과 공통 데이터 로더 |
+| `data/` | `lexicon.json`, `grammar.json`, `compare.json` |
+| `audio/` | 화자 동의를 확인한 음성 파일 자리 |
 
-## 데이터 관리
+## 데이터 스키마
 
-- 기존 객체의 필드 구조를 따라 JSON 배열에 항목을 추가합니다.
-- 음성은 화자의 명시적 동의를 확인하고 `audio.consent_obtained: true`인 경우에만 공개합니다.
-- 출처를 확인하지 못한 항목은 `source.verified: false`로 유지합니다.
-- 표본이 제한되어 있으므로 지역·세대별 경향을 일반화하지 않습니다.
+`data/lexicon.json`의 항목 하나는 다음 구조를 따릅니다.
+
+```json
+{
+  "id": "gs-0001",
+  "dialect_form": "어데",
+  "standard_form": "어디",
+  "meaning": "장소를 묻거나 가리키는 말",
+  "part_of_speech": "부사",
+  "category": "lexical",
+  "phonological_note": "…",
+  "grammatical_note": "…",
+  "region": { "province": "경남", "city": "부산", "sub_dialect": "경남 동부", "macro_region": "경상" },
+  "generation": ["노년", "중년"],
+  "example_sentences": [{ "dialect": "니 어데 가노?", "standard": "너 어디 가니?", "sentence_type": "설명의문문" }],
+  "audio": { "file": "audio/gs-0001.mp3", "consent_obtained": false },
+  "related_grammar_ids": ["gr-gs-01"],
+  "source": { "type": "reference", "reference": "…", "verified": false },
+  "tags": ["장소", "의문", "부산"]
+}
+```
+
+- `region.macro_region`은 `경상`, `전라`, `충청`, `강원`, `제주` 가운데 하나입니다.
+- `category`는 `lexical`(어휘) 또는 `grammatical`(문법)입니다.
+- `audio.consent_obtained`가 `false`이면 사이트는 음성을 재생하지 않습니다.
+
+`data/grammar.json`은 `form`, `function`, `standard_equivalent`, `macro_region`, `region_distribution`, `type`, `example`, `note`, `source`를 사용합니다.
+
+`data/compare.json`은 `standard`, `group`, `forms`(권역별 대응 어형), `note`를 사용합니다.
+
+## 원칙
+
+- 표준어와 방언을 우열로 나누지 않습니다.
+- 출처를 확인한 항목만 `source.verified: true`로 표시하고, 나머지는 ‘검증 필요’로 남깁니다.
+- 화자의 명시적 동의를 받은 음성만 공개합니다.
+- 적은 표본으로 지역·세대 전체의 경향을 일반화하지 않습니다.
+
+## 로컬에서 보기
+
+```bash
+python3 -m http.server 8000
+# http://localhost:8000
+```
+
+JSON 데이터를 `fetch`로 읽으므로 `file://`로 직접 열지 말고 위처럼 로컬 서버로 확인합니다.
+
+---
+
+운영 표기: `@muhanu`

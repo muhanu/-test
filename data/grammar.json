@@ -1,91 +1,415 @@
 [
   {
-    "id": "gr-0001",
+    "id": "gr-gs-01",
     "form": "-노",
-    "function": "설명의문문 종결어미 (의문사가 있는 의문문에 사용)",
+    "function": "설명의문문 종결어미. 의문사가 있는 의문문에 쓴다.",
     "standard_equivalent": "-니 / -어",
+    "macro_region": "경상",
     "region_distribution": [
       "부산",
       "경남",
       "경북 일부"
     ],
-    "counterpart": {
-      "id": "gr-0002",
-      "form": "-나",
-      "function": "판정의문문 종결어미"
-    },
+    "type": "종결어미",
+    "counterpart": null,
     "example": {
       "dialect": "어데 가노?",
       "standard": "어디 가니?"
     },
+    "note": "의문사가 있을 때 '-노', 없을 때 '-나'를 쓰는 대립이 경상 방언의 대표적인 특징이다.",
     "source": {
       "type": "reference",
-      "reference": "국립국어원 관련 질의응답 (2026)",
+      "reference": "국립국어원 지역어 관련 질의응답 및 문법 기술 대조",
       "verified": true
     }
   },
   {
-    "id": "gr-0002",
+    "id": "gr-gs-02",
     "form": "-나",
-    "function": "판정의문문 종결어미 (의문사가 없는 예/아니오 의문문에 사용)",
-    "standard_equivalent": "-니 (예/아니오 응답)",
+    "function": "판정의문문 종결어미. 예/아니오로 답하는 의문문에 쓴다.",
+    "standard_equivalent": "-니",
+    "macro_region": "경상",
     "region_distribution": [
       "부산",
       "경남",
       "경북"
     ],
-    "counterpart": {
-      "id": "gr-0001",
-      "form": "-노",
-      "function": "설명의문문 종결어미"
-    },
+    "type": "종결어미",
+    "counterpart": null,
     "example": {
       "dialect": "밥 뭇나?",
       "standard": "밥 먹었니?"
     },
+    "note": "-노(설명의문문)와 짝을 이루는 어미로, 표준어 '-니'에 대응한다.",
     "source": {
       "type": "reference",
-      "reference": "국립국어원 관련 질의응답 (2026)",
+      "reference": "국립국어원 지역어 관련 질의응답 및 문법 기술 대조",
       "verified": true
     }
   },
   {
-    "id": "gr-0003",
-    "form": "카다 (하다의 방언형)",
-    "function": "인용동사 '하다'의 방언 어형",
+    "id": "gr-gs-03",
+    "form": "카다",
+    "function": "인용동사 '하다'의 방언 어형.",
     "standard_equivalent": "하다 / 라고 하다",
+    "macro_region": "경상",
     "region_distribution": [
       "경남",
       "경북 일부"
     ],
+    "type": "어간 변화",
     "counterpart": null,
     "example": {
       "dialect": "뭐라카노?",
       "standard": "뭐라고 하니?"
     },
+    "note": "'-라고 하-'가 '-라카-'로 줄어든 형태로 설명된다.",
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (검증 필요)",
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
       "verified": false
     }
   },
   {
-    "id": "gr-0004",
+    "id": "gr-gs-04",
     "form": "-이소",
-    "function": "높임 명령형 종결어미",
+    "function": "높임 명령형 종결어미.",
     "standard_equivalent": "-세요",
+    "macro_region": "경상",
     "region_distribution": [
       "경남"
     ],
+    "type": "종결어미",
     "counterpart": null,
     "example": {
       "dialect": "앉으이소.",
       "standard": "앉으세요."
     },
+    "note": "손윗사람에게도 친근하게 쓰이며, 억양에 따라 청유로도 들린다.",
     "source": {
-      "type": "field_interview",
-      "reference": "예시 데이터 (검증 필요)",
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
       "verified": false
+    }
+  },
+  {
+    "id": "gr-gs-05",
+    "form": "-ㅁ니더",
+    "function": "하오·합쇼체를 대신하는 정중한 서술 어미.",
+    "standard_equivalent": "-ㅂ니다",
+    "macro_region": "경상",
+    "region_distribution": [
+      "대구",
+      "경북"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "오늘 날씨 좋심니더.",
+      "standard": "오늘 날씨 좋습니다."
+    },
+    "note": "경북에서 자주 들리는 정중한 말끝으로, '-ㅁ니다'에 대응한다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-jl-01",
+    "form": "-당께",
+    "function": "경험한 일을 청자에게 확인하듯 전하는 종결어미.",
+    "standard_equivalent": "-더라고 / -잖아",
+    "macro_region": "전라",
+    "region_distribution": [
+      "전남",
+      "전북"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "그 집 밥이 참 맛있당께.",
+      "standard": "그 집 밥이 참 맛있더라고."
+    },
+    "note": "감탄과 확인의 뜻이 함께 실린다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-jl-02",
+    "form": "-잖소",
+    "function": "이미 알고 있을 것을 다시 짚는 종결어미.",
+    "standard_equivalent": "-잖아요",
+    "macro_region": "전라",
+    "region_distribution": [
+      "전남",
+      "전북"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "내가 말했잖소.",
+      "standard": "내가 말했잖아요."
+    },
+    "note": "'-잖아'에 '-소'가 붙어 정중함을 더한 형태로 본다.",
+    "source": {
+      "type": "reference",
+      "reference": "지역어 문법 기술 대조",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-jl-03",
+    "form": "-구먼",
+    "function": "새로 알게 된 사실에 감탄하며 확인하는 종결어미.",
+    "standard_equivalent": "-구나",
+    "macro_region": "전라",
+    "region_distribution": [
+      "전라",
+      "충청",
+      "경남 일부"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "허허, 그렇구먼.",
+      "standard": "허허, 그렇구나."
+    },
+    "note": "전라·충청에서 널리 쓰이며 세대를 가리지 않는다.",
+    "source": {
+      "type": "reference",
+      "reference": "지역어 문법 기술 대조",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-jl-04",
+    "form": "-어부러",
+    "function": "함께 하자고 청하는 어미.",
+    "standard_equivalent": "-자",
+    "macro_region": "전라",
+    "region_distribution": [
+      "전남",
+      "전북"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "우리도 가부러.",
+      "standard": "우리도 가자."
+    },
+    "note": "'-어'에 청유의 '-부러'가 결합한 형태로 본다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-cc-01",
+    "form": "-유 / -슈",
+    "function": "해요체 서술·의문에 붙는 종결어미.",
+    "standard_equivalent": "-요",
+    "macro_region": "충청",
+    "region_distribution": [
+      "충남",
+      "충북",
+      "대전"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "밥 먹었슈?",
+      "standard": "밥 먹었어요?"
+    },
+    "note": "충청 방언의 대표적인 해요체로, '-요' 대신 '-유/-슈'가 쓰인다.",
+    "source": {
+      "type": "reference",
+      "reference": "지역어 문법 기술 대조",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-cc-02",
+    "form": "-응게",
+    "function": "이유나 근거를 이어 주는 연결어미.",
+    "standard_equivalent": "-니까",
+    "macro_region": "충청",
+    "region_distribution": [
+      "충남",
+      "충북"
+    ],
+    "type": "연결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "비 오응게 우산 챙겨.",
+      "standard": "비 오니까 우산 챙겨."
+    },
+    "note": "'-으니까'가 줄어든 형태로 본다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-cc-03",
+    "form": "-냐유",
+    "function": "해요체로 묻는 의문 종결어미.",
+    "standard_equivalent": "-냐요 / -어요",
+    "macro_region": "충청",
+    "region_distribution": [
+      "충남",
+      "충북"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "어디 가냐유?",
+      "standard": "어디 가요?"
+    },
+    "note": "'-냐'에 '-유'가 결합해 부드러운 의문을 만든다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-gw-01",
+    "form": "-래이",
+    "function": "친근하게 권하거나 이르는 종결어미.",
+    "standard_equivalent": "-세요 / -래요",
+    "macro_region": "강원",
+    "region_distribution": [
+      "영서",
+      "영동 일부"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "어서 오래이.",
+      "standard": "어서 오세요."
+    },
+    "note": "강원과 경기 동부에서 들리는 말끝으로, 문헌·구술 대조가 더 필요하다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-gw-02",
+    "form": "-디다",
+    "function": "알고 있던 사실을 다시 확인해 전하는 종결어미.",
+    "standard_equivalent": "-더이다 / -더군요",
+    "macro_region": "강원",
+    "region_distribution": [
+      "영서",
+      "산간"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "그 집은 오래됐디다.",
+      "standard": "그 집은 오래됐더이다."
+    },
+    "note": "강원 산간에서 들리는 회상·확인의 말끝으로 기록된다.",
+    "source": {
+      "type": "reference",
+      "reference": "예시 데이터 (문헌·구술 대조 필요)",
+      "verified": false
+    }
+  },
+  {
+    "id": "gr-jj-01",
+    "form": "-마씸",
+    "function": "정중하게 서술하는 종결어미.",
+    "standard_equivalent": "-입니다",
+    "macro_region": "제주",
+    "region_distribution": [
+      "제주"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "저는 학생이마씸.",
+      "standard": "저는 학생입니다."
+    },
+    "note": "제주어의 대표적인 정중 표현으로 널리 알려져 있다.",
+    "source": {
+      "type": "reference",
+      "reference": "제주어 문법 기술 대조",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-jj-02",
+    "form": "-우다",
+    "function": "해요체에 해당하는 서술 종결어미.",
+    "standard_equivalent": "-네요 / -어요",
+    "macro_region": "제주",
+    "region_distribution": [
+      "제주"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "날씨 참 좋우다.",
+      "standard": "날씨 참 좋네요."
+    },
+    "note": "'-우다'는 제주어 해요체의 기본 말끝으로 기술된다.",
+    "source": {
+      "type": "reference",
+      "reference": "제주어 문법 기술 대조",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-jj-03",
+    "form": "-(으)ㅁ수다",
+    "function": "정중한 서술에 쓰는 종결어미.",
+    "standard_equivalent": "-ㅂ니다",
+    "macro_region": "제주",
+    "region_distribution": [
+      "제주"
+    ],
+    "type": "종결어미",
+    "counterpart": null,
+    "example": {
+      "dialect": "밥 먹었심수다.",
+      "standard": "밥 먹었습니다."
+    },
+    "note": "'-마씸'과 함께 제주어의 정중 표현을 이룬다.",
+    "source": {
+      "type": "reference",
+      "reference": "제주어 문법 기술 대조",
+      "verified": true
+    }
+  },
+  {
+    "id": "gr-jj-04",
+    "form": "-광",
+    "function": "두 대상을 이어 주는 접속 조사.",
+    "standard_equivalent": "-와 / -과",
+    "macro_region": "제주",
+    "region_distribution": [
+      "제주"
+    ],
+    "type": "조사",
+    "counterpart": null,
+    "example": {
+      "dialect": "철수광 영희",
+      "standard": "철수와 영희"
+    },
+    "note": "나열할 때 '-광'을 쓴다.",
+    "source": {
+      "type": "reference",
+      "reference": "제주어 문법 기술 대조",
+      "verified": true
     }
   }
 ]

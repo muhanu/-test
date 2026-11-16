@@ -1,39 +1,68 @@
-import { loadLexicon, escapeHTML, regionLabel, hasConsentedAudio, errorMessage } from "./common.js";
+import {
+  loadLexicon, escapeHTML, regionLabel, hasConsentedAudio, errorMessage, macroOf, regionMeta, REGIONS
+} from "./common.js";
 
+const byId = id => document.getElementById(id);
 let items = [];
-const list = document.getElementById("archiveList");
-const count = document.getElementById("archiveCount");
-const regionSelect = document.getElementById("regionFilterArchive");
+let activeRegion = "";
 
 function render() {
-  const region = regionSelect.value;
-  const visible = items.filter(item =>
-    !region || item.region?.city === region || item.region?.province === region
-  );
-  count.textContent = `공개 음성 ${visible.length}건`;
+  const consented = items.filter(hasConsentedAudio);
+  const visible = consented.filter(item => !activeRegion || macroOf(item) === activeRegion);
+
+  byId("archiveTotal").textContent = `${consented.length}건`;
+  byId("archivePending").textContent = `${items.length - consented.length}건`;
+  byId("archiveCount").textContent = activeRegion
+    ? `${activeRegion} 권역 · 공개 음성 ${visible.length}건`
+    : `전국 · 공개 음성 ${visible.length}건`;
+
   if (!visible.length) {
-    list.innerHTML = '<p class="empty-state">공개 동의가 확인된 음성 자료가 없습니다.</p>';
+    byId("archiveList").innerHTML = `<div class="empty-state">
+      <p><strong>아직 공개 동의가 확인된 음성 자료가 없습니다.</strong></p>
+      <p style="margin-top:8px;font-size:.8rem">어휘 ${items.length}개 항목은 모두 글로만 공개되어 있습니다. 화자의 명시적 동의를 받은 음성만 이곳에 올라갑니다.</p>
+    </div>`;
     return;
   }
-  list.innerHTML = visible.map(item => {
+
+  byId("archiveList").innerHTML = visible.map(item => {
+    const meta = regionMeta(macroOf(item));
     const examples = (item.example_sentences || []).map(example => escapeHTML(example.dialect)).join(" · ");
-    return `<article class="entry">
-      <h2>${escapeHTML(item.dialect_form)}</h2>
-      <div class="meta-row">지역 · ${escapeHTML(regionLabel(item.region))} · 세대 · ${(item.generation || []).map(escapeHTML).join(" · ") || "정보 없음"}</div>
-      ${examples ? `<p class="meaning">${examples}</p>` : ""}
+    return `<article class="entry" style="--region-color:${meta ? meta.color : "#7ad8c4"};--region-soft:${meta ? meta.soft : "#16232b"}">
+      <div class="entry-top">
+        <h2 class="entry-word"><span class="dialect">${escapeHTML(item.dialect_form)}</span><span class="sep" aria-hidden="true">/</span><span class="standard">${escapeHTML(item.standard_form)}</span></h2>
+        <span class="entry-region">${escapeHTML(regionLabel(item))}</span>
+      </div>
+      <dl class="entry-notes">
+        <div class="note-row"><dt>세대</dt><dd>${escapeHTML((item.generation || []).join(" · ") || "정보 없음")}</dd></div>
+        ${examples ? `<div class="note-row"><dt>예문</dt><dd>${examples}</dd></div>` : ""}
+      </dl>
       <audio controls preload="none" src="${escapeHTML(item.audio.file)}">오디오를 지원하지 않는 브라우저입니다.</audio>
     </article>`;
   }).join("");
 }
 
+function syncChips() {
+  document.querySelectorAll("[data-archive-region]").forEach(chip => {
+    chip.setAttribute("aria-pressed", String(chip.getAttribute("data-archive-region") === activeRegion));
+  });
+}
+
 async function init() {
   try {
-    items = (await loadLexicon()).filter(hasConsentedAudio);
+    items = await loadLexicon();
+    syncChips();
     render();
-    regionSelect.addEventListener("change", render);
+    document.querySelectorAll("[data-archive-region]").forEach(chip => {
+      chip.addEventListener("click", () => {
+        activeRegion = chip.getAttribute("data-archive-region") || "";
+        syncChips();
+        render();
+      });
+    });
   } catch (error) {
-    count.textContent = "자료 오류";
-    errorMessage(list, error);
+    byId("archiveCount").textContent = "자료 오류";
+    errorMessage("archiveList", error);
   }
 }
+
 init();

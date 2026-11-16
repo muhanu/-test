@@ -4,17 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090b0e">
-<meta name="description" content="경상도 방언 예시를 검색하고 지역과 세대별로 살펴보세요.">
-<title>어휘 사전 · 경상도 말 기록</title>
+<meta name="description" content="전국 5대 권역 방언 어휘를 방언형·표준어·뜻·예문으로 검색하고 권역·품사·세대로 걸러 봅니다.">
+<title>어휘 사전 · 말결 한국어 방언 아카이브</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-<header class="site-header"><div class="header-inner"><a class="site-name" href="index.html">경상도 말 기록</a><nav class="primary-nav" aria-label="주 메뉴"><a href="index.html">처음</a><a href="dictionary.html" aria-current="page">어휘 사전</a><a href="compare.html">표준어 비교</a><a href="grammar.html">문법</a><a href="archive.html">음성</a><a href="generation.html">세대</a><a href="about.html">소개</a></nav></div></header>
-<main id="main"><header class="page-heading"><p class="section-label">01 / 어휘</p><h1>어휘 사전</h1><p>방언형과 표준어, 뜻과 예문을 검색합니다.</p></header>
-<section class="search-panel" aria-label="사전 검색"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">검색어</span><input type="search" id="searchInput" placeholder="단어 또는 뜻 검색" autocomplete="off" aria-controls="results"></label><label class="sr-only" for="regionFilter">지역</label><select id="regionFilter"><option value="">모든 지역</option><option value="부산">부산</option><option value="대구">대구</option><option value="경남">경남</option><option value="경북">경북</option></select><label class="sr-only" for="genFilter">세대</label><select id="genFilter"><option value="">모든 세대</option><option value="청소년">청소년</option><option value="청년">청년</option><option value="중년">중년</option><option value="노년">노년</option></select><button id="resetFilters" type="button">초기화</button></section>
-<div class="result-toolbar"><p id="resultCount" role="status" aria-live="polite">불러오는 중…</p><span>예시 자료 · 검증 전</span></div><section id="results" class="entry-list" aria-label="검색 결과"></section></main>
-<footer class="site-footer"><div class="footer-inner"><span>경상도 말 기록</span><a href="about.html">자료와 연구 방법</a><span>예시는 검증 전 자료입니다.</span></div></footer>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">말</span>
+      <span class="brand-text"><span class="brand-name">말결</span><span class="brand-sub">한국어 방언 아카이브</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="주 메뉴">
+      <a href="index.html">처음</a>
+      <a href="dictionary.html" aria-current="page">어휘 사전</a>
+      <a href="compare.html">지역별 비교</a>
+      <a href="grammar.html">문법</a>
+      <a href="quiz.html">방언 퀴즈</a>
+      <a href="archive.html">음성</a>
+      <a href="generation.html">통계</a>
+      <a href="about.html">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="eyebrow">01 / 어휘</p>
+      <h1>어휘 사전</h1>
+      <p>방언형과 표준어, 뜻과 예문을 함께 봅니다. 검색어는 방언·표준어·뜻·예문·태그 어디에든 걸립니다.</p>
+    </header>
+
+    <section aria-label="검색과 필터">
+      <div class="filter-bar">
+        <div class="filter-search">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10.6 10.6 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <label class="sr-only" for="searchInput">검색어</label>
+          <input id="searchInput" type="search" placeholder="방언, 표준어, 뜻, 예문 검색" autocomplete="off" aria-controls="results">
+        </div>
+        <label class="sr-only" for="regionFilter">권역</label>
+        <select class="control" id="regionFilter">
+          <option value="">모든 권역</option>
+          <option value="경상">경상</option>
+          <option value="전라">전라</option>
+          <option value="충청">충청</option>
+          <option value="강원">강원</option>
+          <option value="제주">제주</option>
+        </select>
+        <label class="sr-only" for="posFilter">품사</label>
+        <select class="control" id="posFilter"><option value="">모든 품사</option></select>
+        <label class="sr-only" for="categoryFilter">갈래</label>
+        <select class="control" id="categoryFilter"><option value="">모든 갈래</option></select>
+        <label class="sr-only" for="generationFilter">세대</label>
+        <select class="control" id="generationFilter"><option value="">모든 세대</option></select>
+        <button class="ghost-btn" id="resetFilters" type="button">초기화</button>
+      </div>
+    </section>
+
+    <div class="result-bar">
+      <p id="resultCount" role="status" aria-live="polite">불러오는 중…</p>
+      <span id="resultHint">전국 5개 권역</span>
+    </div>
+
+    <section id="results" class="entry-list" aria-label="검색 결과">
+      <p class="loading-state">자료를 불러오는 중…</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>말결 · 한국어 방언 아카이브</strong><small>@muhanu · 학습과 탐구를 위한 방언 자료</small></div>
+    <nav class="footer-links" aria-label="바닥글 메뉴">
+      <a href="dictionary.html">어휘 사전</a>
+      <a href="compare.html">지역별 비교</a>
+      <a href="quiz.html">방언 퀴즈</a>
+      <a href="about.html">자료 원칙</a>
+    </nav>
+    <span class="footer-meta">예시 자료 · 검증 전 항목 포함</span>
+  </div>
+</footer>
+
 <script type="module" src="js/dictionary.js"></script>
 </body>
 </html>
